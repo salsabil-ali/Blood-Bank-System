@@ -15,5 +15,4 @@ The system records each request and links it to the hospital that made the reque
 
 
 This system improves efficiency by reducing manual record keeping and minimizing errors. It also allows the blood bank staff to quickly search for compatible blood types, monitor available inventory, and track donation history.
-
-ممكن تقسملي الديسكربشن دا مقاطع  عشان اتنين من الناس هيشتغلوا عليه 
+ 
