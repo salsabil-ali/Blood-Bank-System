@@ -21,7 +21,7 @@ CREATE TABLE Blood_Unit (
     Blood_Type VARCHAR(5),
     Collection_Date DATE,
     Expiration_Date DATE,
-    Donation_ID INT UNIQUE, -- عشان 1:1
+    Donation_ID INT UNIQUE, 
     FOREIGN KEY (Donation_ID) REFERENCES Donation(Donation_ID)
 );
 
@@ -132,3 +132,164 @@ INSERT INTO Request_Details VALUES
 (307, 1011, 1), 
 (308, 1009, 1);
 
+
+
+ALTER TABLE Blood_Unit
+ADD Status VARCHAR(20) DEFAULT 'Available';
+GO
+
+UPDATE Blood_Unit
+SET Status = 'Available'
+WHERE Status IS NULL;
+GO
+
+
+ALTER TABLE Blood_Request
+ADD Request_Status VARCHAR(20) DEFAULT 'Pending';
+GO
+
+UPDATE Blood_Request
+SET Request_Status = 'Pending'
+WHERE Request_Status IS NULL;
+GO
+
+
+
+CREATE PROCEDURE AddDonor
+    @Donor_ID INT,
+    @Name VARCHAR(100),
+    @Gender VARCHAR(10),
+    @Date_of_Birth DATE,
+    @Blood_Type VARCHAR(5),
+    @Phone_Number VARCHAR(15),
+    @Address VARCHAR(255)
+AS
+BEGIN
+    INSERT INTO Donor
+    VALUES (@Donor_ID,@Name,@Gender,@Date_of_Birth,@Blood_Type,@Phone_Number,@Address)
+END;
+GO
+
+
+CREATE PROCEDURE UpdateDonor
+    @Donor_ID INT,
+    @Phone_Number VARCHAR(15),
+    @Address VARCHAR(255)
+AS
+BEGIN
+    UPDATE Donor
+    SET Phone_Number = @Phone_Number,
+        Address = @Address
+    WHERE Donor_ID = @Donor_ID
+END;
+GO
+
+
+CREATE PROCEDURE DeleteDonor
+    @Donor_ID INT
+AS
+BEGIN
+    DELETE FROM Donor
+    WHERE Donor_ID = @Donor_ID
+END;
+GO
+
+--set data with NULL
+CREATE PROCEDURE ClearDonor
+    @Donor_ID INT
+AS
+BEGIN
+      UPDATE Donor
+    SET Phone_Number =  NULL,
+        Address =  null
+    WHERE Donor_ID = @Donor_ID
+  
+END;
+GO
+
+
+
+
+CREATE PROCEDURE GetAllDonors
+AS
+BEGIN
+    SELECT * FROM Donor
+END;
+GO
+
+
+CREATE PROCEDURE GetAvailableBloodUnits
+    @bloodType VARCHAR(5),
+    @status VARCHAR(15)
+AS
+BEGIN
+    SELECT *
+    FROM Blood_Unit
+    WHERE Status = @status And Blood_Type=@bloodType;
+END;
+GO
+
+
+CREATE PROCEDURE AddBloodRequest
+    @Request_ID INT,
+    @Request_Date DATE,
+    @Blood_Type VARCHAR(5),
+    @Quantity_Requested INT,
+    @Hospital_ID INT
+AS
+BEGIN
+    INSERT INTO Blood_Request
+    (Request_ID, Request_Date, Blood_Type, Quantity_Requested, Request_Status, Hospital_ID)
+
+    VALUES
+    (@Request_ID, @Request_Date, @Blood_Type, @Quantity_Requested, 'Pending', @Hospital_ID)
+END;
+GO
+
+
+
+CREATE FUNCTION CountAvailableUnits
+(
+    @BloodType VARCHAR(5)
+)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @Total INT;
+
+    SELECT @Total = COUNT(*)
+    FROM Blood_Unit
+    WHERE Blood_Type = @BloodType
+      AND Status = 'Available';
+
+    RETURN @Total;
+END;
+GO
+
+
+CREATE FUNCTION GetDonorAge
+(
+    @BirthDate DATE
+)
+RETURNS INT
+AS
+BEGIN
+    RETURN DATEDIFF(YEAR, @BirthDate, GETDATE());
+END;
+GO
+
+
+
+EXEC GetAllDonors;
+GO
+
+EXEC GetAvailableBloodUnits;
+GO
+
+SELECT dbo.CountAvailableUnits('A+') AS Available_A_Positive;
+GO
+
+SELECT Name,
+dbo.GetDonorAge(Date_of_Birth) AS Age
+FROM Donor;
+GO
