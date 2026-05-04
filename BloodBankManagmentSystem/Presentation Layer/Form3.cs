@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Blood_Bank
+namespace BloodBankManagmentSystem.Presentation_Layer
 {
     public partial class Form3 : Form
     {

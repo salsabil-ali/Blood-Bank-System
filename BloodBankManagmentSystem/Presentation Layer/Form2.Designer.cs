@@ -1,4 +1,11 @@
-﻿namespace BloodBankManagmentSystem.Presentation_Layer
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+namespace BloodBankManagmentSystem.Presentation_Layer
 {
     partial class Form2
     {
@@ -28,435 +35,441 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            imageList1 = new ImageList(components);
-            textBox1 = new TextBox();
-            pictureBox1 = new PictureBox();
-            panel1 = new Panel();
-            pictureBox2 = new PictureBox();
-            label1 = new Label();
-            groupBox1 = new GroupBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            comboBox2 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            groupBox2 = new GroupBox();
-            label9 = new Label();
-            textBox6 = new TextBox();
-            dataGridView1 = new DataGridView();
-            colID = new DataGridViewTextBoxColumn();
-            colID1 = new DataGridViewTextBoxColumn();
-            colID2 = new DataGridViewTextBoxColumn();
-            colID3 = new DataGridViewTextBoxColumn();
-            colID4 = new DataGridViewTextBoxColumn();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // imageList1
             // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "user.png");
-            imageList1.Images.SetKeyName(1, "blood-test.png");
-            imageList1.Images.SetKeyName(2, "back.png");
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "user.png");
+            this.imageList1.Images.SetKeyName(1, "blood-test.png");
+            this.imageList1.Images.SetKeyName(2, "back.png");
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            textBox1.Location = new Point(111, 12);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(663, 52);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "Donor Management";
-            textBox1.TextChanged += textBox1_TextChanged_1;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(125, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(745, 61);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Donor Management";
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.user;
-            pictureBox1.Location = new Point(41, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(64, 52);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = global::BloodBankManagmentSystem.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(46, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(72, 52);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1086, 100);
-            panel1.TabIndex = 2;
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1222, 100);
+            this.panel1.TabIndex = 2;
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.user1;
-            pictureBox2.Location = new Point(27, 18);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(78, 46);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            this.pictureBox2.Image = global::BloodBankManagmentSystem.Properties.Resources.user1;
+            this.pictureBox2.Location = new System.Drawing.Point(30, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(88, 46);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            label1.Location = new Point(111, 18);
-            label1.Name = "label1";
-            label1.Size = new Size(343, 46);
-            label1.TabIndex = 0;
-            label1.Text = "Donor Management";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(125, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(404, 54);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Donor Management";
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox5);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(comboBox2);
-            groupBox1.Controls.Add(dateTimePicker1);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            groupBox1.Location = new Point(0, 101);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(383, 394);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Donor Information";
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(0, 101);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(431, 394);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Donor Information";
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(186, 338);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(175, 34);
-            textBox5.TabIndex = 13;
+            this.textBox5.Location = new System.Drawing.Point(209, 338);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(196, 39);
+            this.textBox5.TabIndex = 13;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(186, 287);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(175, 34);
-            textBox4.TabIndex = 12;
+            this.textBox4.Location = new System.Drawing.Point(209, 287);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(196, 39);
+            this.textBox4.TabIndex = 12;
             // 
             // comboBox2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "A+", "B-", "O+", "AB+", "O-" });
-            comboBox2.Location = new Point(186, 236);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(175, 36);
-            comboBox2.TabIndex = 11;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "A+",
+            "B-",
+            "O+",
+            "AB+",
+            "O-"});
+            this.comboBox2.Location = new System.Drawing.Point(209, 236);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(196, 40);
+            this.comboBox2.TabIndex = 11;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(186, 181);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(175, 34);
-            dateTimePicker1.TabIndex = 10;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(209, 181);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(196, 39);
+            this.dateTimePicker1.TabIndex = 10;
             // 
             // comboBox1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(186, 139);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(175, 36);
-            comboBox1.TabIndex = 9;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.comboBox1.Location = new System.Drawing.Point(209, 139);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(196, 40);
+            this.comboBox1.TabIndex = 9;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(186, 95);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(175, 34);
-            textBox3.TabIndex = 8;
-            textBox3.TextChanged += textBox3_TextChanged;
+            this.textBox3.Location = new System.Drawing.Point(209, 95);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(196, 39);
+            this.textBox3.TabIndex = 8;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(186, 46);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(175, 34);
-            textBox2.TabIndex = 7;
+            this.textBox2.Location = new System.Drawing.Point(209, 46);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(196, 39);
+            this.textBox2.TabIndex = 7;
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(27, 327);
-            label8.Name = "label8";
-            label8.Size = new Size(92, 28);
-            label8.TabIndex = 6;
-            label8.Text = "Address:";
-            label8.Click += label8_Click;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(30, 327);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(113, 32);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Address:";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(27, 278);
-            label7.Name = "label7";
-            label7.Size = new Size(160, 28);
-            label7.TabIndex = 5;
-            label7.Text = "Phone Number:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(30, 278);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(195, 32);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Phone Number:";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(27, 236);
-            label6.Name = "label6";
-            label6.Size = new Size(123, 28);
-            label6.TabIndex = 4;
-            label6.Text = "Blood Type:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(30, 236);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(149, 32);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Blood Type:";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(27, 188);
-            label5.Name = "label5";
-            label5.Size = new Size(142, 28);
-            label5.TabIndex = 3;
-            label5.Text = "Date of Birth:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 188);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(168, 32);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Date of Birth:";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(33, 139);
-            label4.Name = "label4";
-            label4.Size = new Size(86, 28);
-            label4.TabIndex = 2;
-            label4.Text = "Gender:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 32);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Gender:";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(33, 95);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 28);
-            label3.TabIndex = 1;
-            label3.Text = "Name:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(37, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 32);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Name:";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(33, 46);
-            label2.Name = "label2";
-            label2.Size = new Size(103, 28);
-            label2.TabIndex = 0;
-            label2.Text = "Donor ID:";
-            label2.Click += label2_Click;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(37, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 32);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Donor ID:";
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView1);
-            groupBox2.Controls.Add(textBox6);
-            groupBox2.Controls.Add(label9);
-            groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            groupBox2.Location = new Point(402, 106);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(660, 389);
-            groupBox2.TabIndex = 4;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Donors List";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(23, 56);
-            label9.Name = "label9";
-            label9.Size = new Size(80, 28);
-            label9.TabIndex = 0;
-            label9.Text = "Search:";
-            label9.Click += label9_Click;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(119, 50);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(359, 34);
-            textBox6.TabIndex = 1;
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox2.Location = new System.Drawing.Point(452, 106);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(742, 389);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Donors List";
             // 
             // dataGridView1
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colID, colID1, colID2, colID3, colID4 });
-            dataGridView1.Location = new Point(23, 113);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(631, 254);
-            dataGridView1.TabIndex = 2;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colID1,
+            this.colID2,
+            this.colID3,
+            this.colID4});
+            this.dataGridView1.Location = new System.Drawing.Point(26, 113);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(710, 254);
+            this.dataGridView1.TabIndex = 2;
             // 
             // colID
             // 
-            colID.HeaderText = "Donor ID";
-            colID.MinimumWidth = 6;
-            colID.Name = "colID";
-            colID.ReadOnly = true;
+            this.colID.HeaderText = "Donor ID";
+            this.colID.MinimumWidth = 6;
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
             // 
             // colID1
             // 
-            colID1.HeaderText = "Name";
-            colID1.MinimumWidth = 6;
-            colID1.Name = "colID1";
-            colID1.ReadOnly = true;
+            this.colID1.HeaderText = "Name";
+            this.colID1.MinimumWidth = 6;
+            this.colID1.Name = "colID1";
+            this.colID1.ReadOnly = true;
             // 
             // colID2
             // 
-            colID2.HeaderText = "Gender";
-            colID2.MinimumWidth = 6;
-            colID2.Name = "colID2";
-            colID2.ReadOnly = true;
+            this.colID2.HeaderText = "Gender";
+            this.colID2.MinimumWidth = 6;
+            this.colID2.Name = "colID2";
+            this.colID2.ReadOnly = true;
             // 
             // colID3
             // 
-            colID3.HeaderText = "Blood Type";
-            colID3.MinimumWidth = 6;
-            colID3.Name = "colID3";
-            colID3.ReadOnly = true;
+            this.colID3.HeaderText = "Blood Type";
+            this.colID3.MinimumWidth = 6;
+            this.colID3.Name = "colID3";
+            this.colID3.ReadOnly = true;
             // 
             // colID4
             // 
-            colID4.HeaderText = "Phone Number";
-            colID4.MinimumWidth = 6;
-            colID4.Name = "colID4";
-            colID4.ReadOnly = true;
+            this.colID4.HeaderText = "Phone Number";
+            this.colID4.MinimumWidth = 6;
+            this.colID4.Name = "colID4";
+            this.colID4.ReadOnly = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(134, 50);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(403, 39);
+            this.textBox6.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(26, 56);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 32);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Search:";
             // 
             // button1
             // 
-            button1.BackColor = Color.LawnGreen;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button1.Location = new Point(33, 524);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 33);
-            button1.TabIndex = 5;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.LawnGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(37, 524);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 33);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            button2.BackColor = SystemColors.ActiveCaption;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button2.Location = new Point(145, 524);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 35);
-            button2.TabIndex = 6;
-            button2.Text = "Update";
-            button2.UseVisualStyleBackColor = false;
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(163, 524);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(106, 35);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Update";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            button3.BackColor = Color.IndianRed;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button3.Location = new Point(257, 524);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 35);
-            button3.TabIndex = 7;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = false;
+            this.button3.BackColor = System.Drawing.Color.IndianRed;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.button3.Location = new System.Drawing.Point(289, 524);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(106, 35);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
-            button4.BackColor = SystemColors.AppWorkspace;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button4.Location = new Point(372, 524);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 35);
-            button4.TabIndex = 8;
-            button4.Text = "Clear";
-            button4.UseVisualStyleBackColor = false;
+            this.button4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.button4.Location = new System.Drawing.Point(418, 524);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(106, 35);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Clear";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
-            button5.BackColor = SystemColors.ControlDark;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            button5.ImageKey = "back.png";
-            button5.ImageList = imageList1;
-            button5.Location = new Point(915, 530);
-            button5.Name = "button5";
-            button5.Size = new Size(141, 29);
-            button5.TabIndex = 9;
-            button5.Text = "Back to menu";
-            button5.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button5.UseVisualStyleBackColor = false;
+            this.button5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.button5.ImageKey = "back.png";
+            this.button5.ImageList = this.imageList1;
+            this.button5.Location = new System.Drawing.Point(1029, 530);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(159, 34);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Back to menu";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1086, 570);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(panel1);
-            Controls.Add(pictureBox1);
-            Controls.Add(textBox1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form2";
-            Text = "Donor Management";
-            Load += Form2_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1222, 604);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form2";
+            this.Text = "Donor Management";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
