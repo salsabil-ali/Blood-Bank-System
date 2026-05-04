@@ -50,12 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <!-- Logic Layers -->
+    <Compile Include="Business Logic Layer\BloodUnitService.cs" />
+    <Compile Include="Business Logic Layer\DonationService.cs" />
+    <Compile Include="Business Logic Layer\DonorService.cs" />
+    <Compile Include="Business Logic Layer\HospitalService.cs" />
+    <Compile Include="Business Logic Layer\RequestService.cs" />
+    <Compile Include="Business Logic Layer\ValidationService.cs" />
     <Compile Include="Data Access Layer\DBConnection..cs" />
     <Compile Include="Data Access Layer\DonorDAL.cs" />
+    <Compile Include="Models\BloodRequest.cs" />
+    <Compile Include="Models\BloodUnit.cs" />
+    <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\Donor.cs" />
-    <!-- Presentation Layer (Nesting Fixed) -->
-    <!-- Project Basics -->
+    <Compile Include="Models\Hospital.cs" />
     <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +137,8 @@
     <Content Include="Resources\user.png" />
     <Content Include="Resources\user1.png" />
     <None Include="Resources\logo of blood bank sys.png" />
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
