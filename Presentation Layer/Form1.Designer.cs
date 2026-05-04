@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-namespace BloodBankManagmentSystem.Presentation_Layer
+﻿namespace Blood_Bank
 {
     partial class Form1
     {

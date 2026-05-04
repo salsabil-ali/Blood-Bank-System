@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BloodBankManagmentSystem.Presentation_Layer;
 
+
 namespace BloodBankManagmentSystem
 {
     internal static class Program
@@ -17,7 +18,7 @@ namespace BloodBankManagmentSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Presentation_Layer.Form1());
         }
     }
 }
