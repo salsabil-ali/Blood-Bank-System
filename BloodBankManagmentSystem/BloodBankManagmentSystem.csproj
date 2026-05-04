@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business Logic Layer\BloodUnitService.cs" />
-    <Compile Include="Business Logic Layer\DonationService.cs" />
-    <Compile Include="Business Logic Layer\DonorService.cs" />
-    <Compile Include="Business Logic Layer\HospitalService.cs" />
-    <Compile Include="Business Logic Layer\RequestService.cs" />
-    <Compile Include="Business Logic Layer\ValidationService.cs" />
     <Compile Include="Data Access Layer\DBConnection..cs" />
     <Compile Include="Data Access Layer\DonorDAL.cs" />
     <Compile Include="Models\Donor.cs" />
@@ -93,6 +87,7 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
+    <Folder Include="Business Logic Layer\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
