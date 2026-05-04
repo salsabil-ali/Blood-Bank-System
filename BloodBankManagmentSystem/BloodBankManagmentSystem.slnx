@@ -1,11 +1,3 @@
 <Solution>
-  <Configurations>
-    <BuildType Name="Debug" />
-    <BuildType Name="Default" />
-    <BuildType Name="Release" />
-  </Configurations>
-  <Project Path="BloodBankManagmentSystem.csproj">
-    <BuildType Solution="Default|*" Project="Release" />
-    <Build Solution="Default|*" Project="false" />
-  </Project>
+  <Project Path="BloodBankManagmentSystem.csproj" />
 </Solution>
