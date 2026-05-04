@@ -55,7 +55,11 @@
     <Compile Include="Business Logic Layer\ValidationService.cs" />
     <Compile Include="Data Access Layer\DBConnection..cs" />
     <Compile Include="Data Access Layer\DonorDAL.cs" />
+    <Compile Include="Models\BloodRequest.cs" />
+    <Compile Include="Models\BloodUnit.cs" />
+    <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\Donor.cs" />
+    <Compile Include="Models\Hospital.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
