@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11EC091D-AC6A-482A-9C20-CC14086B8269}</ProjectGuid>
+    <ProjectGuid>{109B9953-CFCE-FAA0-1678-01CB58993C80}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BloodBankManagmentSystem</RootNamespace>
     <AssemblyName>BloodBankManagmentSystem</AssemblyName>
@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Logic Layer\BloodUnitService.cs" />
+    <Compile Include="Business Logic Layer\DonationService.cs" />
+    <Compile Include="Business Logic Layer\DonorService.cs" />
+    <Compile Include="Business Logic Layer\HospitalService.cs" />
+    <Compile Include="Business Logic Layer\RequestService.cs" />
+    <Compile Include="Business Logic Layer\ValidationService.cs" />
     <Compile Include="Data Access Layer\DBConnection..cs" />
     <Compile Include="Data Access Layer\DonorDAL.cs" />
     <Compile Include="Models\Donor.cs" />
@@ -87,7 +93,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
-    <Folder Include="Business Logic Layer\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
