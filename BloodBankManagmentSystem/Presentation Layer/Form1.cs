@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Forms; // This is required for ': Form' to work
+using System.Windows.Forms;
 
 namespace BloodBankManagmentSystem.Presentation_Layer
 {
@@ -8,6 +7,47 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form2 myf = new Form2();
+            myf.Show();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 myf = new Form3();
+            myf.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+        
+
+       
+
+      
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
