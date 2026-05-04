@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11EC091D-AC6A-482A-9C20-CC14086B8269}</ProjectGuid>
+    <ProjectGuid>{109B9953-CFCE-FAA0-1678-01CB58993C80}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BloodBankManagmentSystem</RootNamespace>
     <AssemblyName>BloodBankManagmentSystem</AssemblyName>
