@@ -56,8 +56,10 @@
     <Compile Include="Business Logic Layer\HospitalService.cs" />
     <Compile Include="Business Logic Layer\RequestService.cs" />
     <Compile Include="Business Logic Layer\ValidationService.cs" />
+    <Compile Include="Data Access Layer\BloodUnitDAL.cs" />
     <Compile Include="Data Access Layer\DBConnection..cs" />
     <Compile Include="Data Access Layer\DonorDAL.cs" />
+    <Compile Include="Data Access Layer\RequestDAL.cs" />
     <Compile Include="Models\BloodRequest.cs" />
     <Compile Include="Models\BloodUnit.cs" />
     <Compile Include="Models\Donation.cs" />
@@ -137,6 +139,8 @@
     <Content Include="Resources\user.png" />
     <Content Include="Resources\user1.png" />
     <None Include="Resources\logo of blood bank sys.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
   </ItemGroup>
