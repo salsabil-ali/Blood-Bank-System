@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace BloodBankManagmentSystem.Models
 {
-    internal class BloodRequest
+    public class BloodRequest
     {
+        public int Request_ID { get; set; }
+        public DateTime Request_Date { get; set; }
+        public string Blood_Type { get; set; }
+        public int Quantity_Requested { get; set; }
+        public string Request_Status { get; set; } // Pending / Approved / Completed / Rejected
+        public int Hospital_ID { get; set; }
     }
 }

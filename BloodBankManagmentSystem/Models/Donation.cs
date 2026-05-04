@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BloodBankManagmentSystem.Models
 {
-    internal class Donation
+    public class Donation
     {
+        public int Donation_ID { get; set; }
+        public DateTime Donation_Date { get; set; }
+        public int Quantity { get; set; }
+        public int Donor_ID { get; set; }
     }
 }
