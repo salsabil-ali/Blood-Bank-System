@@ -24,7 +24,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
                     CommandType = CommandType.StoredProcedure
 
                 };
-                cmd.Parameters.Add("@Blood_Type", SqlDbType.NVarChar, 5).Value = bloodType;
+                cmd.Parameters.Add("@bloodType", SqlDbType.NVarChar, 5).Value = bloodType;
 
                 // Select statement is used, so ExecuteReader is needed here instead of ExecuteNonQuery
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -71,7 +71,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
                     CommandType = CommandType.StoredProcedure
                 };
 
-                cmd.Parameters.Add("@BloodUnitID", SqlDbType.Int).Value = id;
+                cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
                 cmd.Parameters.Add("@Status", SqlDbType.NVarChar, 20).Value = status;
 
                 int rowsAffected = cmd.ExecuteNonQuery();

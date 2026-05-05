@@ -13,14 +13,14 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 {
     internal class RequestDAL
     {
-        public void AddRequest(BloodRequest request) //hmm should make the parameters of the function as the properties of the request class?
+        public void AddBloodRequest(BloodRequest request) //hmm should make the parameters of the function as the properties of the request class?
         {
             SqlConnection conn = DBConnection.GetConnection();
             conn.Open();
             try
             {
 
-                SqlCommand cmd = new SqlCommand("AddRequest", conn)
+                SqlCommand cmd = new SqlCommand("AddBloodRequest", conn)
                 {
                     CommandType = CommandType.StoredProcedure
                 };
@@ -51,8 +51,8 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                cmd.Parameters.Add("@Request_ID", SqlDbType.Int).Value = requestId;
-                cmd.Parameters.Add("@New_Status", SqlDbType.NVarChar, 20).Value = newStatus;
+                cmd.Parameters.Add("Id", SqlDbType.Int).Value = requestId;
+                cmd.Parameters.Add("@Status", SqlDbType.NVarChar, 20).Value = newStatus;
 
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected == 0)
