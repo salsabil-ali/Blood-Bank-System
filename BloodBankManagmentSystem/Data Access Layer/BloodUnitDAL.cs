@@ -101,7 +101,6 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 
                 cmd.Parameters.Add("@BloodType", SqlDbType.NVarChar, 5).Value = bloodType;
 
-                conn.Open();
                 object result = cmd.ExecuteScalar();
 
                 count = (result == null) ? 0 : Convert.ToInt32(result);
