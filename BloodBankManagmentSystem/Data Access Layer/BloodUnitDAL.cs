@@ -1,7 +1,6 @@
 using System.Data.SqlClient;
 using System.Data;
 using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -97,13 +96,16 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             conn.Open();
             try
             {
-                SqlCommand cmd = new SqlCommand("CountAvailableUnits", conn)
-                {
-                    CommandType = CommandType.StoredProcedure
-                };
-                cmd.Parameters.Add("@Blood_Type", SqlDbType.NVarChar, 5).Value = bloodType;
+                string query = "SELECT dbo.CountAvailableUnits(@BloodType)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.Add("@BloodType", SqlDbType.NVarChar, 5).Value = bloodType;
+
+                conn.Open();
                 object result = cmd.ExecuteScalar();
-                count = result == null ? 0 : Convert.ToInt32(result);
+
+                count = (result == null) ? 0 : Convert.ToInt32(result);
+
 
             }
             catch (Exception ex)
