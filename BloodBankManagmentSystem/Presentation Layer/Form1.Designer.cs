@@ -35,153 +35,152 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            button1 = new Button();
-            imageList1 = new ImageList(components);
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            button5 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.GradientInactiveCaption;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.ImageIndex = 0;
-            button1.ImageList = imageList1;
-            button1.Location = new Point(239, 147);
-            button1.Name = "button1";
-            button1.Size = new Size(317, 55);
-            button1.TabIndex = 0;
-            button1.Text = "Donor Management";
-            button1.UseVisualStyleBackColor = false;
-            button1.UseWaitCursor = true;
-            button1.TextChanged += button1_Click;
-            button1.Click += button1_Click_1;
+            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.ImageIndex = 0;
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(269, 147);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(357, 55);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Donor Management";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.UseWaitCursor = true;
             // 
             // imageList1
             // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "user.png");
-            imageList1.Images.SetKeyName(1, "blood.png");
-            imageList1.Images.SetKeyName(2, "blood-test.png");
-            imageList1.Images.SetKeyName(3, "hospital.png");
-            imageList1.Images.SetKeyName(4, "logout.png");
-            imageList1.Images.SetKeyName(5, "logout (1).png");
-            imageList1.Images.SetKeyName(6, "exit (1).png");
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "user.png");
+            this.imageList1.Images.SetKeyName(1, "blood.png");
+            this.imageList1.Images.SetKeyName(2, "blood-test.png");
+            this.imageList1.Images.SetKeyName(3, "hospital.png");
+            this.imageList1.Images.SetKeyName(4, "logout.png");
+            this.imageList1.Images.SetKeyName(5, "logout (1).png");
+            this.imageList1.Images.SetKeyName(6, "exit (1).png");
             // 
             // button2
             // 
-            button2.BackColor = Color.LightGreen;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.ImageKey = "blood-test.png";
-            button2.ImageList = imageList1;
-            button2.Location = new Point(239, 208);
-            button2.Name = "button2";
-            button2.Size = new Size(317, 57);
-            button2.TabIndex = 1;
-            button2.Text = "Donation / Blood Unit";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            this.button2.BackColor = System.Drawing.Color.LightGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.ImageKey = "blood-test.png";
+            this.button2.ImageList = this.imageList1;
+            this.button2.Location = new System.Drawing.Point(269, 219);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(357, 57);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Donation / Blood Unit";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            button3.BackColor = Color.PaleGoldenrod;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.ImageKey = "hospital.png";
-            button3.ImageList = imageList1;
-            button3.Location = new Point(239, 271);
-            button3.Name = "button3";
-            button3.Size = new Size(317, 52);
-            button3.TabIndex = 2;
-            button3.Text = "Hospital Requests";
-            button3.UseVisualStyleBackColor = false;
+            this.button3.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.ImageKey = "hospital.png";
+            this.button3.ImageList = this.imageList1;
+            this.button3.Location = new System.Drawing.Point(269, 292);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(357, 52);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Hospital Requests";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            button4.BackColor = Color.LightCoral;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.ImageKey = "blood.png";
-            button4.ImageList = imageList1;
-            button4.Location = new Point(239, 329);
-            button4.Name = "button4";
-            button4.Size = new Size(317, 58);
-            button4.TabIndex = 3;
-            button4.Text = "Inventory (Blood Units)";
-            button4.UseVisualStyleBackColor = false;
+            this.button4.BackColor = System.Drawing.Color.LightCoral;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.ImageKey = "blood.png";
+            this.button4.ImageList = this.imageList1;
+            this.button4.Location = new System.Drawing.Point(269, 366);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(357, 58);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Inventory (Blood Units)";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-1, -3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(801, 106);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click_1;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(901, 106);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            textBox1.ForeColor = SystemColors.HotTrack;
-            textBox1.Location = new Point(328, 109);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 32);
-            textBox1.TabIndex = 6;
-            textBox1.Text = "Main Menu";
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBox1.Location = new System.Drawing.Point(369, 109);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(140, 27);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Text = "Main Menu";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button5
             // 
-            button5.BackColor = SystemColors.AppWorkspace;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.ImageIndex = 5;
-            button5.ImageList = imageList1;
-            button5.Location = new Point(239, 393);
-            button5.Name = "button5";
-            button5.Size = new Size(317, 56);
-            button5.TabIndex = 7;
-            button5.Text = "Exit";
-            button5.UseVisualStyleBackColor = false;
+            this.button5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.ImageIndex = 5;
+            this.button5.ImageList = this.imageList1;
+            this.button5.Location = new System.Drawing.Point(269, 441);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(357, 56);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Exit";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 551);
-            Controls.Add(button5);
-            Controls.Add(textBox1);
-            Controls.Add(pictureBox1);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            ForeColor = SystemColors.ActiveCaptionText;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form1";
-            Text = "Blood Bank Management System";
-            Click += Form1_Click;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(900, 551);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form1";
+            this.Text = "Blood Bank Management System";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

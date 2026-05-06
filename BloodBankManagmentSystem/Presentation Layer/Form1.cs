@@ -55,5 +55,15 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
