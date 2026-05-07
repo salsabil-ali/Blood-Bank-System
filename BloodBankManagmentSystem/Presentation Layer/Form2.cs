@@ -16,8 +16,8 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
 
 
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }
@@ -51,5 +51,16 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         {
 
         }
+
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form1 main = new Form1();
+            main.Show();
+            this.Close();
+        }
+
+        
     }
 }

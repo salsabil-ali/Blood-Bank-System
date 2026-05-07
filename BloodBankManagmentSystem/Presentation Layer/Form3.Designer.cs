@@ -62,7 +62,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.but6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -133,6 +133,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.YellowGreen;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(94, 253);
             this.button2.Name = "button2";
@@ -140,10 +141,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button2.TabIndex = 9;
             this.button2.Text = "Add Donation";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(200, 193);
             this.comboBox1.Name = "comboBox1";
@@ -152,6 +153,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(200, 102);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -230,6 +232,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.colID2,
             this.colID3,
             this.colID5});
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.MenuText;
             this.dataGridView1.Location = new System.Drawing.Point(6, 46);
             this.dataGridView1.Name = "dataGridView1";
@@ -280,6 +283,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // 
             // comboBox2
             // 
+            this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "ALL",
@@ -295,6 +299,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
@@ -307,25 +312,25 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button1.TabIndex = 5;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // but6
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.ImageKey = "back.png";
-            this.button3.ImageList = this.imageList1;
-            this.button3.Location = new System.Drawing.Point(955, 482);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 33);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Back to Menu";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.but6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.but6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.but6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.but6.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.but6.ForeColor = System.Drawing.Color.Black;
+            this.but6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but6.ImageKey = "back.png";
+            this.but6.ImageList = this.imageList1;
+            this.but6.Location = new System.Drawing.Point(971, 486);
+            this.but6.Name = "but6";
+            this.but6.Size = new System.Drawing.Size(138, 33);
+            this.but6.TabIndex = 6;
+            this.but6.Text = "Back to Menu";
+            this.but6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.but6.UseVisualStyleBackColor = false;
+            this.but6.Click += new System.EventHandler(this.but6_Click);
             // 
             // Form3
             // 
@@ -333,7 +338,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1141, 554);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.but6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label6);
@@ -358,7 +363,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
 
         #endregion
-
+       
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label1;
@@ -383,6 +388,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         private Label label6;
         private ComboBox comboBox2;
         private Button button1;
-        private Button button3;
+        private Button but6;
+
     }
 }

@@ -99,10 +99,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(15, 80);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(309, 203);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(309, 202);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters";
@@ -116,7 +116,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(147, 128);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 45);
             this.button2.TabIndex = 5;
@@ -131,27 +131,29 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(8, 128);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 45);
+            this.button1.Size = new System.Drawing.Size(130, 45);
             this.button1.TabIndex = 4;
             this.button1.Text = "🔍Search";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // comboBox2
             // 
+            this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(125, 72);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(154, 36);
             this.comboBox2.TabIndex = 3;
             // 
             // comboBox1
             // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(125, 31);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(154, 36);
             this.comboBox1.TabIndex = 2;
@@ -183,10 +185,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(15, 291);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1070, 477);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(1070, 478);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Blood Units Inventory";
@@ -230,7 +232,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.GridColor = System.Drawing.Color.Silver;
             this.dataGridView2.Location = new System.Drawing.Point(8, 32);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -240,7 +242,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.dataGridView2.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView2.RowTemplate.Height = 26;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1054, 437);
+            this.dataGridView2.Size = new System.Drawing.Size(1054, 438);
             this.dataGridView2.TabIndex = 4;
             // 
             // Column6
@@ -297,29 +299,30 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(860, 785);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(225, 42);
             this.button3.TabIndex = 3;
             this.button3.Text = "⬅️ Back to Menu";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(355, 95);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(356, 95);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(151, 118);
+            this.panel1.Size = new System.Drawing.Size(150, 118);
             this.panel1.TabIndex = 4;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(60, 63);
+            this.label8.Location = new System.Drawing.Point(60, 62);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(27, 31);
@@ -343,9 +346,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(538, 95);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(151, 118);
+            this.panel2.Size = new System.Drawing.Size(150, 118);
             this.panel2.TabIndex = 5;
             // 
             // label9
@@ -353,7 +356,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label9.Location = new System.Drawing.Point(59, 63);
+            this.label9.Location = new System.Drawing.Point(58, 62);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(27, 31);
@@ -378,9 +381,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(723, 95);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(151, 118);
+            this.panel3.Size = new System.Drawing.Size(150, 118);
             this.panel3.TabIndex = 5;
             // 
             // label10
@@ -388,7 +391,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Maroon;
-            this.label10.Location = new System.Drawing.Point(59, 57);
+            this.label10.Location = new System.Drawing.Point(58, 58);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(27, 31);
@@ -413,9 +416,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Location = new System.Drawing.Point(926, 95);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(151, 118);
+            this.panel4.Size = new System.Drawing.Size(150, 118);
             this.panel4.TabIndex = 5;
             // 
             // label11
@@ -423,7 +426,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.BlueViolet;
-            this.label11.Location = new System.Drawing.Point(62, 57);
+            this.label11.Location = new System.Drawing.Point(62, 58);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(27, 31);
@@ -455,7 +458,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form5";
             this.Text = "🩸 Inventory (Blood Units)";
             this.groupBox1.ResumeLayout(false);
@@ -476,6 +479,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
 
         #endregion
+
 
         private Label label1;
         private GroupBox groupBox1;

@@ -19,5 +19,6 @@ namespace BloodBankManagmentSystem.Models
 
         public string Phone_Number { get; set; }
         public string Address { get; set; }
+        public string BloodType { get; internal set; }
     }
 }

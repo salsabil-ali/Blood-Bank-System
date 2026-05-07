@@ -26,7 +26,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
             base.Dispose(disposing);
         }
-
+         
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -93,6 +93,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.textBox1.Location = new System.Drawing.Point(125, 12);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(745, 61);
             this.textBox1.TabIndex = 0;
@@ -102,6 +103,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // 
             this.pictureBox1.Image = global::BloodBankManagmentSystem.Properties.Resources.user;
             this.pictureBox1.Location = new System.Drawing.Point(46, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(72, 52);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,6 +117,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1222, 100);
             this.panel1.TabIndex = 2;
@@ -123,6 +126,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // 
             this.pictureBox2.Image = global::BloodBankManagmentSystem.Properties.Resources.user1;
             this.pictureBox2.Location = new System.Drawing.Point(30, 18);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(88, 46);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -157,7 +161,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 101);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Size = new System.Drawing.Size(431, 394);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
@@ -166,19 +172,22 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(209, 338);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(196, 39);
             this.textBox5.TabIndex = 13;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(209, 287);
+            this.textBox4.Location = new System.Drawing.Point(209, 288);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(196, 39);
             this.textBox4.TabIndex = 12;
             // 
             // comboBox2
             // 
+            this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "A+",
@@ -187,25 +196,30 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             "AB+",
             "O-"});
             this.comboBox2.Location = new System.Drawing.Point(209, 236);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(196, 40);
             this.comboBox2.TabIndex = 11;
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(209, 181);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(196, 39);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // comboBox1
             // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Male",
             "Female"});
             this.comboBox1.Location = new System.Drawing.Point(209, 139);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(196, 40);
             this.comboBox1.TabIndex = 9;
@@ -213,6 +227,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(209, 95);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(196, 39);
             this.textBox3.TabIndex = 8;
@@ -220,6 +235,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(209, 46);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(196, 39);
             this.textBox2.TabIndex = 7;
@@ -227,7 +243,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 327);
+            this.label8.Location = new System.Drawing.Point(30, 328);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 32);
             this.label8.TabIndex = 6;
@@ -300,7 +316,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(452, 106);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Size = new System.Drawing.Size(742, 389);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
@@ -317,7 +335,8 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.colID2,
             this.colID3,
             this.colID4});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 113);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 112);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -364,6 +383,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(134, 50);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(403, 39);
             this.textBox6.TabIndex = 1;
@@ -380,11 +400,13 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LawnGreen;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(37, 524);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 33);
+            this.button1.Size = new System.Drawing.Size(106, 32);
             this.button1.TabIndex = 5;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
@@ -392,9 +414,11 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button2.Location = new System.Drawing.Point(163, 524);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 35);
             this.button2.TabIndex = 6;
@@ -404,9 +428,11 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.IndianRed;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button3.Location = new System.Drawing.Point(289, 524);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(106, 35);
             this.button3.TabIndex = 7;
@@ -416,9 +442,11 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button4.Location = new System.Drawing.Point(418, 524);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(106, 35);
             this.button4.TabIndex = 8;
@@ -428,17 +456,20 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button5.ImageKey = "back.png";
             this.button5.ImageList = this.imageList1;
             this.button5.Location = new System.Drawing.Point(1029, 530);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(159, 34);
             this.button5.TabIndex = 9;
             this.button5.Text = "Back to menu";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form2
             // 
@@ -456,6 +487,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form2";
             this.Text = "Donor Management";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -473,6 +505,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
 
         #endregion
+        
         private ImageList imageList1;
         private TextBox textBox1;
         private PictureBox pictureBox1;
