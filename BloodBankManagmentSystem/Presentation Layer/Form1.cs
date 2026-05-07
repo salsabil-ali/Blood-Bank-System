@@ -15,6 +15,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             InitializeComponent();
         }
 
+        
         private void button1_Click_2(object sender, EventArgs e)
         {
             Form2 myf = new Form2();
