@@ -15,8 +15,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             InitializeComponent();
         }
 
-        
-        private void button1_Click_2(object sender, EventArgs e)
+
+        //button1 bas 3aml nafso 6
+        private void button6_Click(object sender, EventArgs e)
         {
             Form2 myf = new Form2();
             myf.Show();
@@ -62,7 +63,5 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
 
        
-
-
     }
 }
