@@ -1,3 +1,11 @@
 <Solution>
-  <Project Path="BloodBankManagmentSystem.csproj" Id="11ec091d-ac6a-482a-9c20-cc14086b8269" />
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Default" />
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="BloodBankManagmentSystem.csproj">
+    <BuildType Solution="Default|*" Project="Release" />
+    <Build Solution="Default|*" Project="false" />
+  </Project>
 </Solution>

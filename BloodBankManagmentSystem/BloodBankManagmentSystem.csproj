@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11EC091D-AC6A-482A-9C20-CC14086B8269}</ProjectGuid>
+    <ProjectGuid>{109B9953-CFCE-FAA0-1678-01CB58993C80}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BloodBankManagmentSystem</RootNamespace>
     <AssemblyName>BloodBankManagmentSystem</AssemblyName>
@@ -50,12 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <!-- Logic Layers -->
+    <Compile Include="Business Logic Layer\BloodUnitService.cs" />
+    <Compile Include="Business Logic Layer\DonorService.cs" />
+    <Compile Include="Business Logic Layer\HospitalService.cs" />
+    <Compile Include="Business Logic Layer\RequestService.cs" />
+    <Compile Include="Data Access Layer\BloodUnitDAL.cs" />
     <Compile Include="Data Access Layer\DBConnection..cs" />
     <Compile Include="Data Access Layer\DonorDAL.cs" />
+    <Compile Include="Data Access Layer\RequestDAL.cs" />
+    <Compile Include="Models\BloodRequest.cs" />
+    <Compile Include="Models\BloodUnit.cs" />
     <Compile Include="Models\Donor.cs" />
-    <!-- Presentation Layer (Nesting Fixed) -->
-    <!-- Project Basics -->
+    <Compile Include="Models\Hospital.cs" />
     <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,10 @@
     <Content Include="Resources\user.png" />
     <Content Include="Resources\user1.png" />
     <None Include="Resources\logo of blood bank sys.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -36,315 +36,329 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            panel1 = new Panel();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
-            imageList1 = new ImageList(components);
-            groupBox1 = new GroupBox();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
-            button2 = new Button();
-            groupBox2 = new GroupBox();
-            dataGridView1 = new DataGridView();
-            colID = new DataGridViewTextBoxColumn();
-            colID1 = new DataGridViewTextBoxColumn();
-            colID2 = new DataGridViewTextBoxColumn();
-            colID3 = new DataGridViewTextBoxColumn();
-            colID5 = new DataGridViewTextBoxColumn();
-            label6 = new Label();
-            comboBox2 = new ComboBox();
-            button1 = new Button();
-            button3 = new Button();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colID5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.but6 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(192, 192, 255);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1141, 122);
-            panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            label1.ForeColor = Color.DarkOrchid;
-            label1.Location = new Point(138, 45);
-            label1.Name = "label1";
-            label1.Size = new Size(376, 46);
-            label1.TabIndex = 0;
-            label1.Text = "Donation / Blood Unit";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1141, 122);
+            this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(38, 45);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(94, 46);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(38, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(94, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.label1.Location = new System.Drawing.Point(138, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(376, 46);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Donation / Blood Unit";
             // 
             // imageList1
             // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "blood-test.png");
-            imageList1.Images.SetKeyName(1, "back.png");
-            imageList1.Images.SetKeyName(2, "search.png");
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "blood-test.png");
+            this.imageList1.Images.SetKeyName(1, "back.png");
+            this.imageList1.Images.SetKeyName(2, "search.png");
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Controls.Add(dateTimePicker1);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            groupBox1.ForeColor = Color.Black;
-            groupBox1.Location = new Point(0, 128);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(391, 313);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Donation Information";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(17, 48);
-            label2.Name = "label2";
-            label2.Size = new Size(132, 28);
-            label2.TabIndex = 0;
-            label2.Text = "Donation ID:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(16, 95);
-            label3.Name = "label3";
-            label3.Size = new Size(156, 28);
-            label3.TabIndex = 1;
-            label3.Text = "Donation Date:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(16, 145);
-            label4.Name = "label4";
-            label4.Size = new Size(144, 28);
-            label4.TabIndex = 2;
-            label4.Text = "Quantity (ml):";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(17, 193);
-            label5.Name = "label5";
-            label5.Size = new Size(77, 28);
-            label5.TabIndex = 3;
-            label5.Text = "Donor:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(200, 53);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(172, 34);
-            textBox1.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(200, 149);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(172, 34);
-            textBox2.TabIndex = 5;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(200, 102);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(172, 34);
-            dateTimePicker1.TabIndex = 6;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(200, 193);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(172, 36);
-            comboBox1.TabIndex = 7;
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(0, 128);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(391, 313);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Donation Information";
             // 
             // button2
             // 
-            button2.BackColor = Color.YellowGreen;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(99, 248);
-            button2.Name = "button2";
-            button2.Size = new Size(174, 37);
-            button2.TabIndex = 9;
-            button2.Text = "Add Donation";
-            button2.UseVisualStyleBackColor = false;
+            this.button2.BackColor = System.Drawing.Color.YellowGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(94, 253);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(179, 38);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Add Donation";
+            this.button2.UseVisualStyleBackColor = false;
+      
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(200, 193);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(172, 36);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(200, 102);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(172, 34);
+            this.dateTimePicker1.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(200, 149);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(172, 34);
+            this.textBox2.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(200, 53);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(172, 34);
+            this.textBox1.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 193);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 28);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Donor:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 28);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Quantity (ml):";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 28);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Donation Date:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 28);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Donation ID:";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dataGridView1);
-            groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            groupBox2.Location = new Point(407, 135);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(702, 306);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Blood Units List";
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(407, 135);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(702, 306);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Blood Units List";
             // 
             // dataGridView1
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colID, colID1, colID2, colID3, colID5 });
-            dataGridView1.GridColor = SystemColors.MenuText;
-            dataGridView1.Location = new Point(6, 46);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(680, 254);
-            dataGridView1.TabIndex = 0;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colID1,
+            this.colID2,
+            this.colID3,
+            this.colID5});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.MenuText;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 46);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(680, 254);
+            this.dataGridView1.TabIndex = 0;
             // 
             // colID
             // 
-            colID.HeaderText = "Blood Unit ID";
-            colID.MinimumWidth = 6;
-            colID.Name = "colID";
+            this.colID.HeaderText = "Blood Unit ID";
+            this.colID.MinimumWidth = 6;
+            this.colID.Name = "colID";
             // 
             // colID1
             // 
-            colID1.HeaderText = "Blood Type";
-            colID1.MinimumWidth = 6;
-            colID1.Name = "colID1";
+            this.colID1.HeaderText = "Blood Type";
+            this.colID1.MinimumWidth = 6;
+            this.colID1.Name = "colID1";
             // 
             // colID2
             // 
-            colID2.HeaderText = "Collection Date";
-            colID2.MinimumWidth = 6;
-            colID2.Name = "colID2";
+            this.colID2.HeaderText = "Collection Date";
+            this.colID2.MinimumWidth = 6;
+            this.colID2.Name = "colID2";
             // 
             // colID3
             // 
-            colID3.HeaderText = "Expiry Date";
-            colID3.MinimumWidth = 6;
-            colID3.Name = "colID3";
+            this.colID3.HeaderText = "Expiry Date";
+            this.colID3.MinimumWidth = 6;
+            this.colID3.Name = "colID3";
             // 
             // colID5
             // 
-            colID5.HeaderText = "Donation ID";
-            colID5.MinimumWidth = 6;
-            colID5.Name = "colID5";
+            this.colID5.HeaderText = "Donation ID";
+            this.colID5.MinimumWidth = 6;
+            this.colID5.Name = "colID5";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(35, 482);
-            label6.Name = "label6";
-            label6.Size = new Size(162, 20);
-            label6.TabIndex = 3;
-            label6.Text = "Search by Blood Type:";
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(35, 482);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(162, 20);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Search by Blood Type:";
             // 
             // comboBox2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "ALL", "A+", "AB+", "O+", "O-" });
-            comboBox2.Location = new Point(212, 482);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 28);
-            comboBox2.TabIndex = 4;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "ALL",
+            "A+",
+            "AB+",
+            "O+",
+            "O-"});
+            this.comboBox2.Location = new System.Drawing.Point(235, 482);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(151, 28);
+            this.comboBox2.TabIndex = 4;
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.ActiveBorder;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.Black;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.ImageKey = "search.png";
-            button1.ImageList = imageList1;
-            button1.Location = new Point(392, 513);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 29);
-            button1.TabIndex = 5;
-            button1.Text = "Search";
-            button1.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.ImageKey = "search.png";
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(407, 486);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 29);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = false;
+           
             // 
-            // button3
+            // but6
             // 
-            button3.BackColor = SystemColors.AppWorkspace;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.Black;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.ImageKey = "back.png";
-            button3.ImageList = imageList1;
-            button3.Location = new Point(943, 498);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 29);
-            button3.TabIndex = 6;
-            button3.Text = "Back to Menu";
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            this.but6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.but6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.but6.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.but6.ForeColor = System.Drawing.Color.Black;
+            this.but6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but6.ImageKey = "back.png";
+            this.but6.ImageList = this.imageList1;
+            this.but6.Location = new System.Drawing.Point(971, 496);
+            this.but6.Name = "but6";
+            this.but6.Size = new System.Drawing.Size(138, 33);
+            this.but6.TabIndex = 6;
+            this.but6.Text = "Back to Menu";
+            this.but6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.but6.UseVisualStyleBackColor = false;
+            this.but6.Click += new System.EventHandler(this.but6_Click);
             // 
             // Form3
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1141, 554);
-            Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(comboBox2);
-            Controls.Add(label6);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(panel1);
-            Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            ForeColor = Color.MediumSlateBlue;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form3";
-            Text = "Donation/Blood Unit";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1141, 554);
+            this.Controls.Add(this.but6);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form3";
+            this.Text = "Donation/Blood Unit";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
-
+       
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label1;
@@ -369,6 +383,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         private Label label6;
         private ComboBox comboBox2;
         private Button button1;
-        private Button button3;
+        private Button but6;
+
     }
 }
