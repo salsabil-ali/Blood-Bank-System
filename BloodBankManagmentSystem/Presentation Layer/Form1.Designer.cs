@@ -51,15 +51,16 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.ImageIndex = 0;
             this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(239, 118);
+            this.button1.Location = new System.Drawing.Point(269, 148);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(317, 44);
+            this.button1.Size = new System.Drawing.Size(357, 55);
             this.button1.TabIndex = 0;
             this.button1.Text = "Donor Management";
             this.button1.UseVisualStyleBackColor = false;
@@ -81,15 +82,16 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LightGreen;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.ImageKey = "blood-test.png";
             this.button2.ImageList = this.imageList1;
-            this.button2.Location = new System.Drawing.Point(239, 175);
+            this.button2.Location = new System.Drawing.Point(269, 219);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(317, 46);
+            this.button2.Size = new System.Drawing.Size(357, 58);
             this.button2.TabIndex = 1;
             this.button2.Text = "Donation / Blood Unit";
             this.button2.UseVisualStyleBackColor = false;
@@ -98,15 +100,16 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.ImageKey = "hospital.png";
             this.button3.ImageList = this.imageList1;
-            this.button3.Location = new System.Drawing.Point(239, 234);
+            this.button3.Location = new System.Drawing.Point(269, 292);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(317, 42);
+            this.button3.Size = new System.Drawing.Size(357, 52);
             this.button3.TabIndex = 2;
             this.button3.Text = "Hospital Requests";
             this.button3.UseVisualStyleBackColor = false;
@@ -115,15 +118,16 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.LightCoral;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.ImageKey = "blood.png";
             this.button4.ImageList = this.imageList1;
-            this.button4.Location = new System.Drawing.Point(239, 293);
+            this.button4.Location = new System.Drawing.Point(269, 366);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(317, 46);
+            this.button4.Size = new System.Drawing.Size(357, 58);
             this.button4.TabIndex = 3;
             this.button4.Text = "Inventory (Blood Units)";
             this.button4.UseVisualStyleBackColor = false;
@@ -135,7 +139,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.pictureBox1.Location = new System.Drawing.Point(-1, -2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(801, 85);
+            this.pictureBox1.Size = new System.Drawing.Size(901, 106);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -146,10 +150,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.textBox1.Location = new System.Drawing.Point(328, 87);
+            this.textBox1.Location = new System.Drawing.Point(369, 109);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 23);
+            this.textBox1.Size = new System.Drawing.Size(140, 27);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "Main Menu";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -158,15 +162,16 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.ImageIndex = 5;
             this.button5.ImageList = this.imageList1;
-            this.button5.Location = new System.Drawing.Point(239, 353);
+            this.button5.Location = new System.Drawing.Point(269, 441);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(317, 45);
+            this.button5.Size = new System.Drawing.Size(357, 56);
             this.button5.TabIndex = 7;
             this.button5.Text = "Exit";
             this.button5.UseVisualStyleBackColor = false;
@@ -174,9 +179,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 441);
+            this.ClientSize = new System.Drawing.Size(900, 551);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);

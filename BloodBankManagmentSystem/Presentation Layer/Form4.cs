@@ -65,5 +65,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         {
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
