@@ -13,12 +13,12 @@ namespace BloodBankManagmentSystem.Business_Logic_Layer
     {
         private BloodUnitDAL bloodUnitDAL = new BloodUnitDAL();
 
-        public List<BloodUnit> GetAvailableUnits(string bloodType)
+        public List<BloodUnit> GetFilteredUnits(string bloodType, string status)
         {
-            if (string.IsNullOrWhiteSpace(bloodType))
-                throw new Exception("Blood type is required");
+            if (string.IsNullOrEmpty(bloodType) || string.IsNullOrEmpty(status))
+                throw new Exception("Please select both Blood Type and Status.");
 
-            return bloodUnitDAL.GetAvailableBloodUnits(bloodType);
+            return bloodUnitDAL.GetFilterBloodUnits(bloodType, status);
         }
 
         public void UpdateStatus(int bloodUnitId, string status)

@@ -11,19 +11,20 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 {
     internal class BloodUnitDAL
     {
-        public List<BloodUnit> GetAvailableBloodUnits(string bloodType)
+        public List<BloodUnit> GetFilterBloodUnits(string bloodType, string status)
         {
             List<BloodUnit> availableUnits = new List<BloodUnit>();
             SqlConnection conn = DBConnection.GetConnection();
             conn.Open();
             try
             {
-                SqlCommand cmd = new SqlCommand("GetAvailableBloodUnits", conn)
+                SqlCommand cmd = new SqlCommand("GetAvailableBloodUnit", conn)
                 {
                     CommandType = CommandType.StoredProcedure
 
                 };
-                cmd.Parameters.Add("@bloodType", SqlDbType.NVarChar, 5).Value = bloodType;
+                cmd.Parameters.AddWithValue("@BloodType", bloodType);
+                cmd.Parameters.AddWithValue("@Status", status);
 
                 // Select statement is used, so ExecuteReader is needed here instead of ExecuteNonQuery
                 SqlDataReader reader = cmd.ExecuteReader();
