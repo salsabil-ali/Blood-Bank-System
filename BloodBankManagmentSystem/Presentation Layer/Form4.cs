@@ -56,7 +56,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            Form1 main = new Form1();
+            main.Show();
+            this.Close();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

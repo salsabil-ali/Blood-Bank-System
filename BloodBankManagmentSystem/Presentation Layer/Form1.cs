@@ -15,55 +15,53 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             InitializeComponent();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_2(object sender, EventArgs e)
         {
             Form2 myf = new Form2();
             myf.Show();
+            this.Hide();
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_2(object sender, EventArgs e)
         {
             Form3 myf = new Form3();
             myf.Show();
+            this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            
-
+            Form4 myf = new Form4();
+            myf.Show();
+            this.Hide();
         }
 
-        private void Form1_Click(object sender, EventArgs e)
+
+        private void button4_Click(object sender, EventArgs e)
         {
-
+            Form5 myf = new Form5();
+            myf.Show();
+            this.Hide();
         }
 
-       
-        
 
-       
-
-      
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
 
-        }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
+       
 
-        }
+
     }
 }
