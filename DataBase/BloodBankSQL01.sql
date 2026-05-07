@@ -207,6 +207,14 @@ BEGIN
 END;
 GO
 
+-- Show All Button
+CREATE PROCEDURE GetAllBloodUnits
+AS
+BEGIN
+    SELECT * FROM Blood_Unit;
+END;
+GO
+
 -- BLOOD UNIT
 
 CREATE PROCEDURE GetAvailableBloodUnit
