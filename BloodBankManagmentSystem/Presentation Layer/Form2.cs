@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BloodBankManagmentSystem.Business_Logic_Layer;
+using BloodBankManagmentSystem.Data_Access_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +12,34 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 {
     public partial class Form2 : Form
     {
+        private void DisplayDonors()
+        {
+            try
+            {
+                // 1. Call the BLL instead of the DAL
+                DonorService service = new DonorService();
+                var list = service.GetAllDonors();
+
+                // 2. Bind the list to the Grid
+                if (list != null)
+                {
+                    dataGridView1.DataSource = list;
+                }
+                else
+                {
+                    MessageBox.Show("No data returned from the Service.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // This will catch any DB connection issues or logic errors
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
         public Form2()
         {
             InitializeComponent();
+            DisplayDonors();
         }
 
 
@@ -61,6 +88,23 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.Close();
         }
 
-        
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Leave this empty or add your logic here
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

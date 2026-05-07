@@ -209,16 +209,17 @@ GO
 
 -- BLOOD UNIT
 
-CREATE PROCEDURE GetAvailableBloodUnits
-    @BloodType VARCHAR(5)
+CREATE PROCEDURE GetAvailableBloodUnit
+   @BloodType VARCHAR(5),
+    @Status VARCHAR(20)
 AS
 BEGIN
     SELECT *
     FROM Blood_Unit
-    WHERE Status = 'Available'
-    AND Blood_Type = @BloodType
+    WHERE Blood_Type = @BloodType
+    AND Status = @Status
 END;
-GO
+
 
 CREATE PROCEDURE UpdateBloodUnitStatus
     @Id INT,

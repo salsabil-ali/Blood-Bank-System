@@ -1,27 +1,43 @@
-﻿using System;
+﻿// ===============================
+// BloodUnitService.cs
+// ===============================
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BloodBankManagmentSystem.Models;
+using BloodBankManagmentSystem.Data_Access_Layer;
 
 namespace BloodBankManagmentSystem.Business_Logic_Layer
 {
-    internal class BloodUnitService
+    public class BloodUnitService
     {
+        private BloodUnitDAL bloodUnitDAL = new BloodUnitDAL();
 
-        //functions to do
-        //GetAllBloodUnits()
-        //GetBloodUnitById(int id)
+        public List<BloodUnit> GetAvailableUnits(string bloodType)
+        {
+            if (string.IsNullOrWhiteSpace(bloodType))
+                throw new Exception("Blood type is required");
 
-        //GetAvailableUnits()
-        //GetUnitsByBloodType(string type)
+            return bloodUnitDAL.GetAvailableBloodUnits(bloodType);
+        }
 
-        //MarkAsUsed(int id)
-        //MarkAsExpired()
+        public void UpdateStatus(int bloodUnitId, string status)
+        {
+            if (bloodUnitId <= 0)
+                throw new Exception("Invalid Blood Unit ID");
 
-        //DeleteBloodUnit(int id)
+            if (string.IsNullOrWhiteSpace(status))
+                throw new Exception("Status is required");
 
-        //CheckExpiry()
-        //CountAvailableUnits(string bloodType)
+            bloodUnitDAL.UpdateBloodUnitStatus(bloodUnitId, status);
+        }
+
+        public int CountAvailable(string bloodType)
+        {
+            if (string.IsNullOrWhiteSpace(bloodType))
+                throw new Exception("Blood type is required");
+
+            return bloodUnitDAL.CountAvailableUnits(bloodType);
+        }
     }
 }

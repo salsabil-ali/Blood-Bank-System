@@ -61,11 +61,6 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colID3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colID4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -119,7 +114,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1222, 100);
+            this.panel1.Size = new System.Drawing.Size(1362, 100);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox2
@@ -319,7 +314,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(742, 389);
+            this.groupBox2.Size = new System.Drawing.Size(881, 517);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Donors List";
@@ -329,56 +324,17 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.colID1,
-            this.colID2,
-            this.colID3,
-            this.colID4});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 112);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 105);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(710, 254);
+            this.dataGridView1.Size = new System.Drawing.Size(839, 393);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // colID
-            // 
-            this.colID.HeaderText = "Donor ID";
-            this.colID.MinimumWidth = 6;
-            this.colID.Name = "colID";
-            this.colID.ReadOnly = true;
-            // 
-            // colID1
-            // 
-            this.colID1.HeaderText = "Name";
-            this.colID1.MinimumWidth = 6;
-            this.colID1.Name = "colID1";
-            this.colID1.ReadOnly = true;
-            // 
-            // colID2
-            // 
-            this.colID2.HeaderText = "Gender";
-            this.colID2.MinimumWidth = 6;
-            this.colID2.Name = "colID2";
-            this.colID2.ReadOnly = true;
-            // 
-            // colID3
-            // 
-            this.colID3.HeaderText = "Blood Type";
-            this.colID3.MinimumWidth = 6;
-            this.colID3.Name = "colID3";
-            this.colID3.ReadOnly = true;
-            // 
-            // colID4
-            // 
-            this.colID4.HeaderText = "Phone Number";
-            this.colID4.MinimumWidth = 6;
-            this.colID4.Name = "colID4";
-            this.colID4.ReadOnly = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // textBox6
             // 
@@ -403,10 +359,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(37, 524);
+            this.button1.Location = new System.Drawing.Point(12, 523);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 32);
+            this.button1.Size = new System.Drawing.Size(87, 32);
             this.button1.TabIndex = 5;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
@@ -417,13 +373,14 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(163, 524);
+            this.button2.Location = new System.Drawing.Point(125, 523);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 35);
+            this.button2.Size = new System.Drawing.Size(91, 35);
             this.button2.TabIndex = 6;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -431,10 +388,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(289, 524);
+            this.button3.Location = new System.Drawing.Point(239, 523);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 35);
+            this.button3.Size = new System.Drawing.Size(82, 35);
             this.button3.TabIndex = 7;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
@@ -445,13 +402,14 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(418, 524);
+            this.button4.Location = new System.Drawing.Point(340, 523);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 35);
+            this.button4.Size = new System.Drawing.Size(91, 35);
             this.button4.TabIndex = 8;
             this.button4.Text = "Clear";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -461,10 +419,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.button5.ImageKey = "back.png";
             this.button5.ImageList = this.imageList1;
-            this.button5.Location = new System.Drawing.Point(1029, 530);
+            this.button5.Location = new System.Drawing.Point(1147, 639);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(159, 34);
+            this.button5.Size = new System.Drawing.Size(170, 46);
             this.button5.TabIndex = 9;
             this.button5.Text = "Back to menu";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -475,7 +433,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1222, 604);
+            this.ClientSize = new System.Drawing.Size(1362, 709);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -532,11 +490,6 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         private TextBox textBox6;
         private Label label9;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn colID;
-        private DataGridViewTextBoxColumn colID1;
-        private DataGridViewTextBoxColumn colID2;
-        private DataGridViewTextBoxColumn colID3;
-        private DataGridViewTextBoxColumn colID4;
         private Button button1;
         private Button button2;
         private Button button3;

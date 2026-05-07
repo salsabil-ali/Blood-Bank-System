@@ -8,7 +8,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
     public static class DBConnection
     {
         // This line grabs the string where put in App.config
-        private static string connString = ConfigurationManager.ConnectionStrings["HemoGlobeDB"].ConnectionString;
+        private static string connString = ConfigurationManager.ConnectionStrings["BloodBankConn"].ConnectionString;
 
         public static SqlConnection GetConnection()
         {
