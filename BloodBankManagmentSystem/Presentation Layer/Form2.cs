@@ -51,5 +51,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
