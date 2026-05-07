@@ -61,9 +61,6 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.Close();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
