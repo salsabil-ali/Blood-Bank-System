@@ -222,14 +222,9 @@ END;
 GO
 
 -- Clear Donor info
-Create PROCEDURE ClearDonor
-     @Id INT,
-     @Dname varchar(100),
-     @dgen varchar(10),
-     @DBBD date,
-     @DonBloodtype varchar(5),
-     @Dpno varchar(15),
-     @Daddress varchar(255)
+Create PROCEDURE ClearDonor0
+     @Id INT
+     
 AS
 BEGIN
    UPDATE Donor
@@ -415,3 +410,4 @@ BEGIN
     RETURN @Total
 END;
 GO
+
