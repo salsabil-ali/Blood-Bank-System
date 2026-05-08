@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BloodBankManagmentSystem.Models
 {
-        public class Donation
+    // Model representing a Donation record with ID, date, quantity and donor reference.
+    public class Donation
     {
         public int Donation_ID { get; set; }
 

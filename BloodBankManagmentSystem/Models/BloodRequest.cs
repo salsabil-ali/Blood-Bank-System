@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BloodBankManagmentSystem.Models
 {
+    // Represents a blood request submitted by a hospital including requested type and quantity.
     public class BloodRequest
     {
         public int Request_ID { get; set; }

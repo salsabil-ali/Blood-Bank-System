@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BloodBankManagmentSystem.Models
 {
+    // Represents allocation details for a blood request (which units and quantities were allocated).
     public class RequestDetails
     {
         public int Request_ID { get; set; }

@@ -13,6 +13,7 @@ namespace BloodBankManagmentSystem.Business_Logic_Layer
     {
         private BloodUnitDAL bloodUnitDAL = new BloodUnitDAL();
 
+        // Retrieves a list of blood units filtered by blood type and status after validating inputs.
         public List<BloodUnit> GetFilteredUnits(string bloodType, string status)
         {
             if (string.IsNullOrEmpty(bloodType) || string.IsNullOrEmpty(status))
@@ -21,6 +22,7 @@ namespace BloodBankManagmentSystem.Business_Logic_Layer
             return bloodUnitDAL.GetFilterBloodUnits(bloodType, status);
         }
 
+        // Validates and updates the status of a single blood unit by ID.
         public void UpdateStatus(int bloodUnitId, string status)
         {
             if (bloodUnitId <= 0)
@@ -32,6 +34,7 @@ namespace BloodBankManagmentSystem.Business_Logic_Layer
             bloodUnitDAL.UpdateBloodUnitStatus(bloodUnitId, status);
         }
 
+        // Returns the number of available units for the specified blood type.
         public int CountAvailable(string bloodType)
         {
             if (string.IsNullOrWhiteSpace(bloodType))
@@ -40,11 +43,10 @@ namespace BloodBankManagmentSystem.Business_Logic_Layer
             return bloodUnitDAL.CountAvailableUnits(bloodType);
         }
 
+        // Retrieves all blood units without filters.
         public List<BloodUnit> GetAllUnits()
         {
             return bloodUnitDAL.GetAllUnits();
         }
     }
-
-
 }

@@ -2,6 +2,7 @@
 {
     partial class Form6
     {
+        // Designer partial class for Form6 (Hospitals UI): declares UI components and InitializeComponent method.
         /// <summary>
         /// Required designer variable.
         /// </summary>

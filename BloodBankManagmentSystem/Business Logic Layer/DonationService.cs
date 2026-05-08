@@ -7,12 +7,10 @@ namespace BloodBankManagmentSystem.Business_Logic_Layer
 {
     public class DonationService
     {
+        // Business service for donation operations: validates inputs and delegates to DonationDAL.
         private DonationDAL donationDAL = new DonationDAL();
 
-        // =========================
-        // Add Donation
-        // =========================
-
+        // Validates and adds a donation record via the DAL.
         public void AddDonation(Donation donation)
         {
             if (donation.Quantity <= 0)
@@ -26,6 +24,7 @@ namespace BloodBankManagmentSystem.Business_Logic_Layer
 
  
 
+        // Searches for blood units by type using the DAL and returns matching units.
         public List<BloodUnit> SearchBloodUnits(string bloodType)
         {
             if (string.IsNullOrWhiteSpace(bloodType))
@@ -34,6 +33,7 @@ namespace BloodBankManagmentSystem.Business_Logic_Layer
             return donationDAL.SearchBloodUnits(bloodType);
         }
 
+        // Retrieves all blood units via the DAL.
         public List<BloodUnit> GetAllBloodUnits()
         {
             return donationDAL.GetAllBloodUnits();

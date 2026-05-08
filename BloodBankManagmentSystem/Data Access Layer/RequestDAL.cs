@@ -8,7 +8,8 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 {
     public class RequestDAL
     {
-        // 1. Get ALL Requests (For the top grid)
+        // Data access for BloodRequest entities: provides retrieval and CRUD operations.
+        // Retrieves all blood requests for display in grids or UI lists.
         public List<BloodRequest> GetAllRequests()
         {
             List<BloodRequest> requests = new List<BloodRequest>();
@@ -34,8 +35,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             return requests;
         }
 
-        // 2. Get Allocated Units (For the bottom grid)
-        // This fixes Error CS1061
+        // Retrieves request details (allocated blood units) for a specific request ID.
         public List<RequestDetails> GetRequestDetails(int requestId)
         {
             List<RequestDetails> list = new List<RequestDetails>();
@@ -59,6 +59,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             return list;
         }
 
+        // Adds a new blood request using the provided BloodRequest model.
         public void AddBloodRequest(BloodRequest req)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -75,6 +76,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
+        // Updates the status of a specific blood request by ID.
         public void UpdateRequestStatus(int id, string status)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -88,6 +90,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
+        // Deletes a blood request by calling the 'DeleteRequest' stored procedure.
         public void DeleteRequest(int id)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -104,6 +107,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
+        // Searches for a BloodRequest by ID and returns the model if found.
         public BloodRequest SearchByRequestID(int id)
         {
             using (SqlConnection conn = DBConnection.GetConnection())

@@ -14,21 +14,25 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 {
     public partial class Form6 : Form
     {
+        // Form handling hospital UI interactions: add, update, delete, search and display hospitals.
         public Form6()
         {
             InitializeComponent();
         }
 
+        // Handles changes to the address textbox; currently unused but reserved for future validation.
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+        // Event fired when the hospital information group box receives focus.
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
 
+        // Click handler for the Add button: validates input, creates a Hospital and saves via service.
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -78,11 +82,13 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
         }
 
+        // Handles changes to the search textbox for hospitals; currently unused.
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+        // Click handler for Update button: builds Hospital object and calls service to update.
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -159,6 +165,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
        
 
+        // Click handler for the search button: searches for a hospital by ID and updates UI.
         private void button6_Click(object sender, EventArgs e)
         {
             try
@@ -201,6 +208,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
         }
 
+        // Click handler for Show All button: loads and displays all hospitals.
         private void button7_Click(object sender, EventArgs e)
         {
             try
@@ -223,6 +231,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
         }
 
+        // Navigates back to the main menu (Form1).
         private void button5_Click(object sender, EventArgs e)
         {
             Form1 main = new Form1();

@@ -12,6 +12,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 {
     public partial class Form5 : Form
     {
+        // Form for filtering and viewing blood units, and displaying summary statistics.
         public Form5()
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         }
 
+        // Navigates back to the main menu (Form1).
         private void button3_Click(object sender, EventArgs e)
         {
             Form1 main = new Form1();
@@ -44,6 +46,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.Close();
         }
 
+        // Executes filtering based on selected blood type and status, updates grid and stats.
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -73,6 +76,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
         }
 
+        // Shows all blood units and updates dashboard counters.
         private void button2_Click(object sender, EventArgs e)
         {
             

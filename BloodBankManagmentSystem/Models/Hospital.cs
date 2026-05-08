@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BloodBankManagmentSystem.Models
 {
+    // Model representing a Hospital with contact details used by requests and UI.
     public class Hospital
     {
         public int Hospital_ID { get; set; }

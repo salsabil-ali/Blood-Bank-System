@@ -12,10 +12,9 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 {
     public class DonationDAL
     {
-        // =========================
-        // Get All Donations
-        // =========================
+        // Data access for Donation entities: provides CRUD and related blood unit queries.
 
+        // Retrieves all donations from the Donation table.
         public List<Donation> GetAllDonations()
         {
             List<Donation> donations = new List<Donation>();
@@ -56,6 +55,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 
 
 
+        // Inserts a new donation record into the database.
         public void AddDonation(Donation donation)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -84,10 +84,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
-        // =========================
-        // Delete Donation
-        // =========================
-
+        // Deletes a donation by ID from the Donation table.
         public void DeleteDonation(int donationId)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -110,10 +107,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
-        // =========================
-        // Update Donation
-        // =========================
-
+        // Updates an existing donation's fields by ID.
         public void UpdateDonation(Donation donation)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -143,10 +137,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
-        // =========================
-        // Search Blood Units
-        // =========================
-
+        // Searches for blood units by blood type and returns a list of BloodUnit models.
         public List<BloodUnit> SearchBloodUnits(string bloodType)
         {
             List<BloodUnit> units = new List<BloodUnit>();
@@ -191,6 +182,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
         }
 
 
+        // Retrieves all blood units from the Blood_Unit table including status information.
         public List<BloodUnit> GetAllBloodUnits()
         {
             List<BloodUnit> units = new List<BloodUnit>();

@@ -12,6 +12,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 {
     public partial class Form4 : Form
     {
+        // Form for managing blood requests: create, search, delete, approve and view details.
         public Form4()
         {
             InitializeComponent();
@@ -74,6 +75,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         }
 
+        // Handles Add Request button: maps UI fields to model and creates a new request via service.
         private void button2_Click_1(object sender, EventArgs e)
         {
             
@@ -105,6 +107,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         }
 
+        // Handles Search Request button: searches by ID and displays the result in the grid.
         private void button6_Click(object sender, EventArgs e)
         {
             if (int.TryParse(textBox6.Text, out int id))
@@ -120,8 +123,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
                     MessageBox.Show("No request found with that ID.");
                 }
             }
-    }
+        }
 
+        // Handles Delete Request button: deletes a request after confirmation and refreshes the list.
         private void button4_Click(object sender, EventArgs e)
         {
          
@@ -144,10 +148,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-        
-
        
-            private void button5_Click_1(object sender, EventArgs e)
+        // Resets the request form input fields and clears details grid.
+        private void button5_Click_1(object sender, EventArgs e)
         {
             // Just reset the UI controls
             textBox1.Clear();
@@ -162,6 +165,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
         
 
+        // Shows all requests in the grid and clears the search textbox.
         private void button7_Click(object sender, EventArgs e)
         {
             try
@@ -175,6 +179,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        // Loads and displays the details (allocated units) for the selected request in the bottom grid.
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -200,6 +205,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         }
 
+        // Approves a request by updating its status and refreshing the request list.
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -229,7 +235,5 @@ namespace BloodBankManagmentSystem.Presentation_Layer
                 MessageBox.Show("Update Error: " + ex.Message);
             }
         }
-
-        
     }
 }

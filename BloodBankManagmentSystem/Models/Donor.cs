@@ -2,6 +2,7 @@
 
 namespace BloodBankManagmentSystem.Models
 {
+    // Represents a donor with personal details and contact information.
     public class Donor
     {
         public int Donor_ID { get; set; }

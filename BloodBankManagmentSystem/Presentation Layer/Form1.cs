@@ -8,8 +8,10 @@ using System.Windows.Forms;
 
 namespace BloodBankManagmentSystem.Presentation_Layer
 {
+    // Main menu form that navigates to other forms in the application.
     public partial class Form1 : Form
     {
+        // Initializes the main form and its components.
         public Form1()
         {
             InitializeComponent();

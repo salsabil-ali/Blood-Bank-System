@@ -7,6 +7,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 {
     public class DonorDAL
     {
+        // Handles database operations for Donor entities including CRUD and search.
         public List<Donor> GetAllDonors()
         {
             List<Donor> donorList = new List<Donor>();
@@ -49,6 +50,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
         }
 
 
+        // Adds a new donor to the Donor table using the AddDonor stored procedure.
         public void AddDonor(Donor donor)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -71,6 +73,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
         }
 
 
+        // Updates an existing donor record using the UpdateDonor0 stored procedure.
         public void UpdateDonor(Donor donor)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -92,6 +95,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 
         
 
+        // Deletes a donor by ID using the DeleteDonor stored procedure.
         public void DeleteDonor(int donorId)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -107,8 +111,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
-
-
+        // Clears a donor's non-key fields by calling the ClearDonor stored procedure.
         public void ClearDonor(int donorId)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -124,8 +127,8 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
-
-            public Donor SearchDonor(int donorId)
+        // Searches for a donor by ID using 'searchByDID' stored procedure and returns the Donor model.
+        public Donor SearchDonor(int donorId)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
             {
@@ -153,13 +156,5 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
             return null;
         }
-
-       
-
-       
-
-
     }
-
-
 }

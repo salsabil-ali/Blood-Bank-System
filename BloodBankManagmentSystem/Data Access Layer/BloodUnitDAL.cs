@@ -9,8 +9,10 @@ using BloodBankManagmentSystem.Models;
 
 namespace BloodBankManagmentSystem.Data_Access_Layer
 {
+    // Data access class for BloodUnit entities; performs CRUD and query operations using stored procedures.
     internal class BloodUnitDAL
     {
+        // Retrieves blood units filtered by blood type and status. Returns a list of matching BloodUnit objects.
         public List<BloodUnit> GetFilterBloodUnits(string bloodType, string status)
         {
             List<BloodUnit> availableUnits = new List<BloodUnit>();
@@ -58,7 +60,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             return availableUnits;
         }
 
-
+        // Updates the status of a blood unit identified by its ID. Throws if no record was updated.
         public void UpdateBloodUnitStatus(int id, string status) // can be changed to take an object instead of individual parameters if needed
         {
             SqlConnection conn = DBConnection.GetConnection();
@@ -90,6 +92,8 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
                 conn.Close();
             }
         }
+
+        // Returns the count of available blood units for the given blood type by calling a scalar DB function.
         public int CountAvailableUnits(string bloodType)
         {
             int count = 0;
@@ -119,7 +123,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             return count;
         }
 
-        //Sorry ya nour :) I added this 
+        // Retrieves all blood units from the database using the GetAllBloodUnits stored procedure.
         public List<BloodUnit> GetAllUnits()
         {
             List<BloodUnit> units = new List<BloodUnit>();

@@ -8,6 +8,8 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 {
     internal class HospitalDAL
     {
+        // Provides CRUD operations for Hospital entities using raw SQL and stored procedures.
+        // Retrieves all hospitals from the database and maps them to Hospital model objects.
         public List<Hospital> GetAllHospitals()
         {
             List<Hospital> hospitals = new List<Hospital>();
@@ -35,6 +37,8 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 
 
         }
+        // Inserts a new hospital record into the database.
+        // Inserts a new hospital record into the Hospital table using provided Hospital model.
         public void AddHospital(Hospital h)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -52,6 +56,8 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
+        // Updates an existing hospital's details by ID; throws if no rows were affected.
+        // Updates an existing hospital's details; throws if no record is updated.
         public void UpdateHospital(Hospital h)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -78,6 +84,8 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
         }
 
         // 2. Delete Hospital
+        // Deletes a hospital by ID; throws a friendly message if foreign key constraint prevents deletion.
+        // Deletes a hospital by ID. Throws a user-friendly exception if constrained by related data.
         public void DeleteHospital(int id)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
@@ -101,6 +109,8 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
                 }
             }
         }
+        // Retrieves a hospital by its ID using the stored procedure 'searchByHID'.
+        // Retrieves a single Hospital by its ID using the stored procedure 'searchByHID'.
         public Hospital GetHospitalById(int id)
         {
             Hospital hospital = null;
@@ -128,6 +138,8 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             return hospital;
         }
 
+        // Clears (nullifies) a hospital's non-key fields using the stored procedure 'ClearHospital'.
+        // Calls stored procedure to clear non-key fields for a hospital record (sets fields to NULL).
         public void ClearHospitalRecord(int id)
         {
             using (SqlConnection conn = DBConnection.GetConnection())

@@ -10,6 +10,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 {
     partial class Form3
     {
+        // Designer partial class for Form3 (Donation/Blood Unit UI). Contains UI declarations and InitializeComponent.
         /// <summary>
         /// Required designer variable.
         /// </summary>

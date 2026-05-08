@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BloodBankManagmentSystem.Models
 {
+    // Model representing a blood unit with type, collection/expiration dates, status and donation reference.
     public class BloodUnit
     {
         public int BloodUnit_ID { get; set; }

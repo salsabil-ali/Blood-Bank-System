@@ -14,6 +14,8 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 {
     public partial class Form2 : Form
     {
+        // Form used to manage Donors: add, update, delete, search and display donor records.
+        // Loads donors from the service and binds them to the DataGridView.
         private void DisplayDonors()
         {
             try
@@ -38,50 +40,55 @@ namespace BloodBankManagmentSystem.Presentation_Layer
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        // Initializes the form and loads donor list on startup.
         public Form2()
         {
             InitializeComponent();
             DisplayDonors();
         }
 
-
-
+        // Event handler for changes in the ID textbox; currently unused.
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }
 
+        // Click handler for label2; currently unused.
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
+        // Click handler for label8; currently unused.
         private void label8_Click(object sender, EventArgs e)
         {
 
         }
 
+        // Grid cell content click handler; reserved for future logic.
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
+        // Event handler for donor name textbox changes; currently unused.
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+        // Click handler for label9; currently unused.
         private void label9_Click(object sender, EventArgs e)
         {
 
         }
 
+        // Form load event for Form2; currently unused (initialization done in constructor).
         private void Form2_Load(object sender, EventArgs e)
         {
 
         }
-
-
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -90,15 +97,19 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.Close();
         }
 
+        // Alternate grid cell content click handler; currently unused.
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        // Handles custom formatting for grid cells; currently empty.
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Leave this empty or add your logic here
         }
 
+        // Handles the Update button click: maps UI to model and calls service to update donor.
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -124,6 +135,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
         }
 
+        // Handles Clear operation: clears donor data in DB and resets UI fields.
         private void button4_Click(object sender, EventArgs e)
         {
             try
@@ -152,6 +164,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         
         }
 
+        // Handles Add operation: maps UI fields to Donor model and creates a new donor via service.
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -184,12 +197,14 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
 
         // Add this helper method to your Form class
+        // Reloads the donor list from service and binds it to the grid.
         private void LoadDonorsList()
         {
             DonorService service = new DonorService();
             dataGridView1.DataSource = service.GetAllDonors();
         }
 
+        // Handles Delete operation: deletes donor after confirmation.
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -224,6 +239,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
         }
 
+        // Handles Search operation: looks up donor by ID and populates UI with results.
         private void button6_Click(object sender, EventArgs e)
         {
             try
@@ -257,6 +273,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         }
 
+        // Shows all donors in the grid and clears the search box.
         private void button7_Click(object sender, EventArgs e)
         {
             try
@@ -279,9 +296,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
         }
 
+        // Event handler for the search textbox; currently unused.
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
     }
-    }
+}
