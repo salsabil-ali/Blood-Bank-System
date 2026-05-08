@@ -13,13 +13,32 @@ namespace BloodBankManagmentSystem.Presentation_Layer
     public partial class Form4 : Form
     {
         // Form for managing blood requests: create, search, delete, approve and view details.
+        // 1. Declare the service at the class level
+        private RequestService requestService = new RequestService();
         public Form4()
         {
             InitializeComponent();
+            // Add this line here to manually link the event
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+
+            // Also ensure this property is set so you can select the whole row
+            this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.MultiSelect = false;
         }
 
+        // 2. Load data into the main grid when the form opens
         private void Form4_Load(object sender, EventArgs e)
         {
+            try
+            {
+                dataGridView1.DataSource = requestService.GetAllRequests();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading requests: " + ex.Message);
+                // Setting this to FullRowSelect resolves the sorting conflict
+                this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            }
 
         }
 
@@ -43,8 +62,42 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                // Check if the user clicked a valid row (not the header)
+                if (e.RowIndex >= 0)
+                {
+                    // 1. Get the Request ID from the selected row in the TOP grid
+                    // Note: Make sure "Request_ID" matches the property name in your BloodRequest model
+                    var selectedIdValue = dataGridView1.Rows[e.RowIndex].Cells["Request_ID"].Value;
+
+                    if (selectedIdValue != null)
+                    {
+                        int selectedRequestId = Convert.ToInt32(selectedIdValue);
+
+                        // 2. Sync the ID to the textbox (so you can Delete or Approve easily)
+                        textBox1.Text = selectedRequestId.ToString();
+
+                        // 3. Fetch the allocation details for this specific request
+                        var details = requestService.GetRequestDetails(selectedRequestId);
+
+                        // 4. Bind the details to the BOTTOM grid
+                        dataGridView2.DataSource = null; // Clear old data first
+                        dataGridView2.DataSource = details;
+
+                        if (details == null || details.Count == 0)
+                        {
+                            MessageBox.Show("No specific units have been allocated to this request yet.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading allocation details: " + ex.Message);
+            }
 
         }
 
@@ -78,29 +131,26 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         // Handles Add Request button: maps UI fields to model and creates a new request via service.
         private void button2_Click_1(object sender, EventArgs e)
         {
-            
             try
             {
-                // Check which textbox is which based on your Form Design!
-                // Based on your UI order: Request ID, Date, Hospital ID, Blood Type, Qty
                 BloodRequest req = new BloodRequest
                 {
-                    Request_ID = int.Parse(textBox1.Text),         // The first box
-                    Request_Date = dateTimePicker1.Value,          // The DatePicker
-                    Hospital_ID = int.Parse(textBox2.Text),        // The Hospital ID box
-                    Blood_Type = comboBox2.Text,                   // The dropdown
-                    Quantity_Requested = int.Parse(textBox3.Text)  // The Quantity box
+                    Request_ID = int.Parse(textBox1.Text),
+                    Request_Date = dateTimePicker1.Value,
+                    Blood_Type = comboBox2.Text,
+                    Quantity_Requested = int.Parse(textBox2.Text),
+                    Hospital_ID = int.Parse(textBox3.Text)
                 };
 
-                RequestService service = new RequestService();
-                service.CreateRequest(req);
+                requestService.CreateRequest(req);
+                MessageBox.Show("Blood Request added successfully!");
 
-                MessageBox.Show("Request added successfully!");
-                dataGridView1.DataSource = service.GetAllRequests(); // Refresh list
+                // Refresh main grid
+                dataGridView1.DataSource = requestService.GetAllRequests();
             }
-            catch (Exception ex) { MessageBox.Show("Check your inputs: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
         }
-        
+
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
@@ -112,10 +162,16 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         {
             if (int.TryParse(textBox6.Text, out int id))
             {
-                var result = new RequestService().SearchRequest(id);
+                var result = requestService.SearchRequest(id);
                 if (result != null)
                 {
-                    // Put the single found result into a list so it shows in the grid
+                    // Sync TextBoxes with found data
+                    textBox3.Text = result.Request_ID.ToString();
+                    textBox2.Text = result.Quantity_Requested.ToString();
+                    textBox1.Text = result.Hospital_ID.ToString();
+                    comboBox2.Text = result.Blood_Type;
+                    dateTimePicker1.Value = result.Request_Date;
+
                     dataGridView1.DataSource = new List<BloodRequest> { result };
                 }
                 else
@@ -128,112 +184,87 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         // Handles Delete Request button: deletes a request after confirmation and refreshes the list.
         private void button4_Click(object sender, EventArgs e)
         {
-         
-            try
-            {
-                if (!string.IsNullOrEmpty(textBox1.Text))
-                {
-                    int id = int.Parse(textBox1.Text);
-                    var confirm = MessageBox.Show("Delete this request?", "Confirm", MessageBoxButtons.YesNo);
-                    if (confirm == DialogResult.Yes)
-                    {
-                        RequestService service = new RequestService();
-                        // Call the correct DAL method for the Request
-                        service.DeleteRequest(id);
-
-                        MessageBox.Show("Deleted!");
-                        dataGridView1.DataSource = service.GetAllRequests();
-                    }
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-       
+
         // Resets the request form input fields and clears details grid.
         private void button5_Click_1(object sender, EventArgs e)
         {
-            // Just reset the UI controls
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox6.Clear(); // Search box
-            comboBox2.SelectedIndex = -1;
-            dateTimePicker1.Value = DateTime.Now;
-
-            // Clear the bottom details grid too
-            dataGridView2.DataSource = null;
+           
         }
-        
+
 
         // Shows all requests in the grid and clears the search textbox.
         private void button7_Click(object sender, EventArgs e)
         {
-            try
-            {
-                RequestService service = new RequestService();
-                dataGridView1.DataSource = service.GetAllRequests();
-
-                // Optional: clear the search box
-                textBox6.Clear();
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            dataGridView1.DataSource = requestService.GetAllRequests();
+            textBox6.Clear();
         }
 
+        // Triggered whenever a row is selected in the TOP grid
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    // Get the row
+                    DataGridViewRow row = dataGridView1.SelectedRows[0];
+
+                    // Get ID from the first cell (index 0) if "Request_ID" name is missing
+                    var idValue = row.Cells[0].Value;
+
+                    if (idValue != null)
+                    {
+                        int selectedId = Convert.ToInt32(idValue);
+                        textBox3.Text = selectedId.ToString();
+
+                        // Fetch and Load
+                        var details = requestService.GetRequestDetails(selectedId);
+                        dataGridView2.DataSource = null;
+                        dataGridView2.DataSource = details;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
         // Loads and displays the details (allocated units) for the selected request in the bottom grid.
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                // 1. Get the Request ID from the row you just clicked
                 if (e.RowIndex >= 0)
                 {
+                    // Get ID from the clicked row
                     int selectedRequestId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Request_ID"].Value);
 
-                    // 2. Fetch the details for this specific request
-                    RequestService service = new RequestService();
-                    var details = service.GetRequestDetails(selectedRequestId);
+                    // Update TextBoxes for editing
+                    textBox1.Text = selectedRequestId.ToString();
 
-                    // 3. Put them in the BOTTOM grid (image_705517.png)
+                    // Fill the BOTTOM grid with unit allocation details
+                    var details = requestService.GetRequestDetails(selectedRequestId);
                     dataGridView2.DataSource = details;
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Error loading details: " + ex.Message); }
+            catch (Exception ex) { MessageBox.Show("Error loading allocation details: " + ex.Message); }
         }
+    
+        
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        // Approves a request by updating its status and refreshing the request list.
-        private void button3_Click(object sender, EventArgs e)
+        
+
+
+
+        private void Form4_Load_1(object sender, EventArgs e)
         {
-            try
-            {
-                // 1. Get the Request ID from your UI (textBox1)
-                if (int.TryParse(textBox1.Text, out int requestId))
-                {
-                    // 2. Define the new status (could also come from a ComboBox)
-                    string newStatus = "Approved";
 
-                    // 3. Call the Service Layer
-                    RequestService service = new RequestService();
-                    service.UpdateStatus(requestId, newStatus);
-
-                    MessageBox.Show("Request status updated to " + newStatus);
-
-                    // 4. Refresh the grid to show the change
-                    dataGridView1.DataSource = service.GetAllRequests();
-                }
-                else
-                {
-                    MessageBox.Show("Please enter a valid Request ID.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Update Error: " + ex.Message);
-            }
         }
     }
 }

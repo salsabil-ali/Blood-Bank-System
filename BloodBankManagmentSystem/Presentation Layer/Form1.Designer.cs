@@ -209,8 +209,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Blood Bank Management System";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

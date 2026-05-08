@@ -44,6 +44,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.label1 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.but6 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -74,7 +74,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1141, 122);
+            this.panel1.Size = new System.Drawing.Size(1002, 122);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -125,6 +125,13 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Donation Information";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(200, 208);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(172, 39);
+            this.textBox3.TabIndex = 10;
             // 
             // button2
             // 
@@ -205,7 +212,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(407, 135);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(702, 306);
+            this.groupBox2.Size = new System.Drawing.Size(580, 306);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Blood Units List";
@@ -221,7 +228,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(680, 254);
+            this.dataGridView1.Size = new System.Drawing.Size(567, 254);
             this.dataGridView1.TabIndex = 0;
             // 
             // label6
@@ -264,9 +271,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.but6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but6.ImageKey = "back.png";
             this.but6.ImageList = this.imageList1;
-            this.but6.Location = new System.Drawing.Point(971, 486);
+            this.but6.Location = new System.Drawing.Point(828, 447);
             this.but6.Name = "but6";
-            this.but6.Size = new System.Drawing.Size(138, 33);
+            this.but6.Size = new System.Drawing.Size(152, 39);
             this.but6.TabIndex = 6;
             this.but6.Text = "Back to Menu";
             this.but6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -290,19 +297,12 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(200, 208);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 39);
-            this.textBox3.TabIndex = 10;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1141, 551);
+            this.ClientSize = new System.Drawing.Size(1002, 551);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.but6);
             this.Controls.Add(this.comboBox2);
@@ -312,7 +312,9 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form3";
             this.Text = "Donation/Blood Unit";
             this.panel1.ResumeLayout(false);
