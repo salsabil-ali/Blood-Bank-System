@@ -1,3 +1,9 @@
+CREATE DATABASE BloodBankDB;
+GO
+
+USE BloodBankDB;
+GO
+
 -- ========================================
 -- TABLES
 -- ========================================
@@ -129,7 +135,7 @@ INSERT INTO Hospital VALUES
 (207,'El Noor Hospital','0239990000','Giza');
 
 -- =========================
--- BLOOD REQUEST (مع Status)
+-- BLOOD REQUEST 
 -- =========================
 INSERT INTO Blood_Request VALUES
 (301,'2026-04-12','A+',2,'Completed',201),
@@ -179,17 +185,19 @@ END;
 GO
 
 --update donor
-CREATE PROCEDURE UpdateDonor
+CREATE PROCEDURE UpdateDonor0
     @Donor_ID INT,
     @Name VARCHAR(100),
     @Phone_Number VARCHAR(15),
-    @Address VARCHAR(255)
+    @Address VARCHAR(255),
+    @Dgen varchar(10)
 AS
 BEGIN
     UPDATE Donor
     SET Name = @Name,
         Phone_Number = @Phone_Number,
-        Address = @Address
+        Address = @Address,
+        Gender=@Dgen
     WHERE Donor_ID = @Donor_ID
 END;
 GO
@@ -203,13 +211,6 @@ BEGIN
 END;
 GO
 
---show all donors
-CREATE PROCEDURE GetAllDonors
-AS
-BEGIN
-    SELECT * FROM Donor
-END;
-GO
 
 --search by the donor id
 CREATE PROCEDURE searchByDID
@@ -217,6 +218,23 @@ CREATE PROCEDURE searchByDID
 AS
 BEGIN
     SELECT * FROM Donor where Donor_ID =@id
+END;
+GO
+
+-- Clear Donor info
+Create PROCEDURE ClearDonor
+     @Id INT,
+     @Dname varchar(100),
+     @dgen varchar(10),
+     @DBBD date,
+     @DonBloodtype varchar(5),
+     @Dpno varchar(15),
+     @Daddress varchar(255)
+AS
+BEGIN
+   UPDATE Donor
+    SET  Phone_Number=Null ,Address=Null ,Blood_Type=NULL ,Date_of_Birth=NUll ,Gender=NUll ,Name=NULL
+    WHERE Donor_ID= @Id
 END;
 GO
 
@@ -288,32 +306,45 @@ END;
 GO
 
 --Clear Requests
-CREATE PROCEDURE ClearHospital
+CREATE OR ALTER PROCEDURE ClearRequest
     @Id INT,
     @Status VARCHAR(20)
 AS
 BEGIN
-   UPDATE Hospital
-    SET Hospital_Name=Null ,Phone_Number=Null ,Address=Null
-    WHERE Hospital_ID = @Id
+    UPDATE Blood_Request
+    SET Request_Status = @Status,
+        Request_Date = GETDATE()
+    WHERE Request_ID = @Id;
 END;
 GO
 
---Delete hospital
-CREATE PROCEDURE DeleteHospital
+CREATE PROCEDURE DeleteRequest
     @Id INT
 AS
 BEGIN
-    DELETE FROM Hospital
-    WHERE Hospital_ID = @Id;
+    SET NOCOUNT ON;
+    -- Delete from child table first to avoid FK errors
+    DELETE FROM Request_Details WHERE Request_ID = @Id;
+    -- Delete from parent table
+    DELETE FROM Blood_Request WHERE Request_ID = @Id;
 END;
 GO
 
---show all requests
+--show all requests updated one
 CREATE PROCEDURE GetAllRequests
 AS
 BEGIN
-    SELECT * FROM Blood_Request
+    SET NOCOUNT ON;
+
+    SELECT 
+        Request_ID, 
+        Request_Date, 
+        Blood_Type, 
+        Quantity_Requested, 
+        Request_Status, 
+        Hospital_ID
+    FROM Blood_Request
+    ORDER BY Request_Date DESC;
 END;
 GO
 
@@ -325,6 +356,8 @@ BEGIN
     SELECT * FROM Blood_Request where Request_ID =@id
 END;
 GO
+
+
 
 -----------------------------
 -- HOSPITAL
@@ -380,13 +413,5 @@ BEGIN
     AND Status = 'Available'
 
     RETURN @Total
-END;
-GO
-
-CREATE FUNCTION GetDonorAge(@BirthDate DATE)
-RETURNS INT
-AS
-BEGIN
-    RETURN DATEDIFF(YEAR,@BirthDate,GETDATE())
 END;
 GO

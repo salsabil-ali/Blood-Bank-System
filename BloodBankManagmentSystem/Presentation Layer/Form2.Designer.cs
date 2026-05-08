@@ -175,9 +175,12 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "A+",
+            "A-",
+            "B+",
             "B-",
-            "O+",
             "AB+",
+            "AB-",
+            "O+",
             "O-"});
             this.comboBox2.Location = new System.Drawing.Point(209, 236);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
