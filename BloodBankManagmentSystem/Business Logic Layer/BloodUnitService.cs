@@ -39,5 +39,12 @@ namespace BloodBankManagmentSystem.Business_Logic_Layer
 
             return bloodUnitDAL.CountAvailableUnits(bloodType);
         }
+
+        public List<BloodUnit> GetAllUnits()
+        {
+            return bloodUnitDAL.GetAllUnits();
+        }
     }
+
+
 }

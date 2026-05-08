@@ -48,9 +48,6 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             return donorList;
         }
 
-        // =========================
-        // Add Donor
-        // =========================
 
         public void AddDonor(Donor donor)
         {
@@ -73,30 +70,27 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
-        // =========================
-        // Update Donor
-        // =========================
 
         public void UpdateDonor(Donor donor)
         {
             using (SqlConnection conn = DBConnection.GetConnection())
             {
-                SqlCommand cmd = new SqlCommand("UpdateDonor", conn);
-
+                SqlCommand cmd = new SqlCommand("UpdateDonor0", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+                // Must match your CREATE PROCEDURE exactly:
                 cmd.Parameters.AddWithValue("@Donor_ID", donor.Donor_ID);
+                cmd.Parameters.AddWithValue("@Name", donor.Name);
                 cmd.Parameters.AddWithValue("@Phone_Number", donor.Phone_Number);
                 cmd.Parameters.AddWithValue("@Address", donor.Address);
+                cmd.Parameters.AddWithValue("@Dgen", donor.Gender); // Added this
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
         }
 
-        // =========================
-        // Delete Donor
-        // =========================
+        
 
         public void DeleteDonor(int donorId)
         {
@@ -113,9 +107,7 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             }
         }
 
-        // =========================
-        // Clear Donor Data
-        // =========================
+
 
         public void ClearDonor(int donorId)
         {
@@ -125,11 +117,49 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
 
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@Donor_ID", donorId);
+                cmd.Parameters.AddWithValue("@Id", donorId);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
         }
+
+
+            public Donor SearchDonor(int donorId)
+        {
+            using (SqlConnection conn = DBConnection.GetConnection())
+            {
+                SqlCommand cmd = new SqlCommand("searchByDID", conn); // Matches your SQL script name
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", donorId);
+
+                conn.Open();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new Donor
+                        {
+                            Donor_ID = Convert.ToInt32(reader["Donor_ID"]),
+                            Name = reader["Name"].ToString(),
+                            Gender = reader["Gender"].ToString(),
+                            Date_of_Birth = Convert.ToDateTime(reader["Date_of_Birth"]),
+                            Blood_Type = reader["Blood_Type"].ToString(),
+                            Phone_Number = reader["Phone_Number"].ToString(),
+                            Address = reader["Address"].ToString()
+                        };
+                    }
+                }
+            }
+            return null;
+        }
+
+       
+
+       
+
+
     }
+
+
 }

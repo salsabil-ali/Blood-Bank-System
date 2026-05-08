@@ -159,9 +159,10 @@ INSERT INTO Request_Details VALUES
 -- ========================================
 -- STORED PROCEDURES
 -- ========================================
-
+-----------------------------
 -- DONOR CRUD
-
+-----------------------------
+--add donor
 CREATE PROCEDURE AddDonor
     @Donor_ID INT,
     @Name VARCHAR(100),
@@ -177,6 +178,7 @@ BEGIN
 END;
 GO
 
+--update donor
 CREATE PROCEDURE UpdateDonor
     @Donor_ID INT,
     @Name VARCHAR(100),
@@ -192,6 +194,7 @@ BEGIN
 END;
 GO
 
+--delete donor
 CREATE PROCEDURE DeleteDonor
     @Donor_ID INT
 AS
@@ -200,6 +203,7 @@ BEGIN
 END;
 GO
 
+--show all donors
 CREATE PROCEDURE GetAllDonors
 AS
 BEGIN
@@ -207,16 +211,20 @@ BEGIN
 END;
 GO
 
--- Show All Button
-CREATE PROCEDURE GetAllBloodUnits
+--search by the donor id
+CREATE PROCEDURE searchByDID
+@id INT
 AS
 BEGIN
-    SELECT * FROM Blood_Unit;
+    SELECT * FROM Donor where Donor_ID =@id
 END;
 GO
 
--- BLOOD UNIT
 
+-----------------------------
+-- BLOOD UNIT
+-----------------------------
+-- get the blood unit by type & status
 CREATE PROCEDURE GetAvailableBloodUnit
    @BloodType VARCHAR(5),
     @Status VARCHAR(20)
@@ -228,7 +236,7 @@ BEGIN
     AND Status = @Status
 END;
 
-
+/* --update blood units (status)
 CREATE PROCEDURE UpdateBloodUnitStatus
     @Id INT,
     @Status VARCHAR(20)
@@ -238,10 +246,22 @@ BEGIN
     SET Status = @Status
     WHERE BloodUnit_ID = @Id
 END;
+GO */
+
+-- Show All Button
+CREATE PROCEDURE GetAllBloodUnits
+AS
+BEGIN
+    SELECT * FROM Blood_Unit;
+END;
 GO
 
--- REQUEST
 
+
+-----------------------------
+-- REQUEST
+-----------------------------
+--add blood request
 CREATE PROCEDURE AddBloodRequest
     @Request_ID INT,
     @Request_Date DATE,
@@ -255,6 +275,7 @@ BEGIN
 END;
 GO
 
+--update blood request
 CREATE PROCEDURE UpdateRequestStatus
     @Id INT,
     @Status VARCHAR(20)
@@ -266,6 +287,29 @@ BEGIN
 END;
 GO
 
+--Clear Requests
+CREATE PROCEDURE ClearHospital
+    @Id INT,
+    @Status VARCHAR(20)
+AS
+BEGIN
+   UPDATE Hospital
+    SET Hospital_Name=Null ,Phone_Number=Null ,Address=Null
+    WHERE Hospital_ID = @Id
+END;
+GO
+
+--Delete hospital
+CREATE PROCEDURE DeleteHospital
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Hospital
+    WHERE Hospital_ID = @Id;
+END;
+GO
+
+--show all requests
 CREATE PROCEDURE GetAllRequests
 AS
 BEGIN
@@ -273,14 +317,52 @@ BEGIN
 END;
 GO
 
--- HOSPITAL
+-- search by request id
+CREATE PROCEDURE searchByID
+@id INT
+AS
+BEGIN
+    SELECT * FROM Blood_Request where Request_ID =@id
+END;
+GO
 
+-----------------------------
+-- HOSPITAL
+-----------------------------
+
+--Show all Hospitals
 CREATE PROCEDURE GetAllHospitals
 AS
 BEGIN
     SELECT * FROM Hospital
 END;
 GO
+
+
+--Clear hospitals
+CREATE PROCEDURE ClearHospital
+    @Id INT,
+    @nam varchar(100),
+    @pno varchar(15),
+    @adds varchar(255)
+AS
+BEGIN
+   UPDATE Hospital
+    SET Hospital_Name=Null ,Phone_Number=Null ,Address=Null
+    WHERE Hospital_ID = @Id
+END;
+GO
+
+
+-- search by hospital
+CREATE PROCEDURE searchByHID
+@id INT
+AS
+BEGIN
+    SELECT * FROM Hospital where Hospital_ID =@id
+END;
+GO
+
 
 -- ========================================
 -- FUNCTIONS

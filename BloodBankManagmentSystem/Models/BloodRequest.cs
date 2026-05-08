@@ -12,7 +12,7 @@ namespace BloodBankManagmentSystem.Models
         public DateTime Request_Date { get; set; }
         public string Blood_Type { get; set; }
         public int Quantity_Requested { get; set; }
-        public string Request_Status { get; set; } // Pending / Approved / Completed / Rejected
+        public string Status { get; set; } // Pending, Approved, etc.
         public int Hospital_ID { get; set; }
     }
 }

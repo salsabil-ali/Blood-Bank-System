@@ -119,6 +119,34 @@ namespace BloodBankManagmentSystem.Data_Access_Layer
             return count;
         }
 
+        //Sorry ya nour :) I added this 
+        public List<BloodUnit> GetAllUnits()
+        {
+            List<BloodUnit> units = new List<BloodUnit>();
+            using (SqlConnection conn = DBConnection.GetConnection())
+            {
+                SqlCommand cmd = new SqlCommand("GetAllBloodUnits", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        units.Add(new BloodUnit
+                        {
+                            BloodUnit_ID = Convert.ToInt32(reader["BloodUnit_ID"]),
+                            Blood_Type = reader["Blood_Type"].ToString(),
+                            Collection_Date = Convert.ToDateTime(reader["Collection_Date"]),
+                            Expiration_Date = Convert.ToDateTime(reader["Expiration_Date"]),
+                            Status = reader["Status"].ToString(),
+                            Donation_ID = Convert.ToInt32(reader["Donation_ID"])
+                        });
+                    }
+                }
+            }
+            return units;
+        }
 
     }
 }

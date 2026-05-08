@@ -1,7 +1,4 @@
-﻿// ===============================
-// DonorService.cs
-// ===============================
-
+﻿
 using System;
 using System.Collections.Generic;
 using BloodBankManagmentSystem.Models;
@@ -53,9 +50,15 @@ namespace BloodBankManagmentSystem.Business_Logic_Layer
             donorDAL.ClearDonor(donorId);
         }
 
-        public int GetDonorAge(DateTime birthDate)
+
+        public Donor SearchDonor(int donorId)
         {
-            return DateTime.Now.Year - birthDate.Year;
+            if (donorId <= 0)
+                throw new Exception("Invalid donor ID");
+
+            // This now returns the Donor object found by the DAL
+            return donorDAL.SearchDonor(donorId);
         }
+
     }
 }

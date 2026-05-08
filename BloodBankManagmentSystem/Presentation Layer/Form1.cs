@@ -62,6 +62,11 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         }
 
-       
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            Form6 myf = new Form6();
+            myf.Show();
+            this.Hide();
+        }
     }
 }

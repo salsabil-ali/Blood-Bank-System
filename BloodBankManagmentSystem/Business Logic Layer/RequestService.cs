@@ -1,28 +1,28 @@
-﻿using BloodBankManagmentSystem.Models;
+﻿using BloodBankManagmentSystem.Data_Access_Layer;
+using BloodBankManagmentSystem.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BloodBankManagmentSystem.Business_Logic_Layer
+public class RequestService
 {
-    internal class RequestService
+    // You named it requestDAL here...
+    private RequestDAL requestDAL = new RequestDAL();
+
+    // ...so you must use requestDAL everywhere below!
+    public List<BloodRequest> GetAllRequests() => requestDAL.GetAllRequests();
+
+    public List<RequestDetails> GetRequestDetails(int id) => requestDAL.GetRequestDetails(id);
+
+    public void CreateRequest(BloodRequest req) => requestDAL.AddBloodRequest(req);
+
+    public void UpdateStatus(int id, string status) => requestDAL.UpdateRequestStatus(id, status);
+
+    public void DeleteRequest(int id)
     {
-        //functions to do
-//        GetAllRequests()
-//GetRequestById(int id)
+        if (id <= 0) throw new Exception("Invalid ID.");
 
-//CreateRequest(BloodRequest request)
-//UpdateRequest(BloodRequest request)
-//DeleteRequest(int id)
-
-//ApproveRequest(int requestId)
-//RejectRequest(int requestId)
-//CompleteRequest(int requestId)
-
-//AllocateBloodUnits(int requestId)
-
-//CheckStockBeforeApproval(string bloodType, int qty)
+        requestDAL.DeleteRequest(id);
     }
+
+    public BloodRequest SearchRequest(int id) => requestDAL.SearchByRequestID(id);
 }

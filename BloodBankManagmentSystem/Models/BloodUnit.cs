@@ -12,7 +12,7 @@ namespace BloodBankManagmentSystem.Models
         public string Blood_Type { get; set; }
         public DateTime Collection_Date { get; set; }
         public DateTime Expiration_Date { get; set; }
-        public string Status { get; set; } // Available / Used / Expired
+        public string Status { get; set; }// Available / Used / Expired
         public int Donation_ID { get; set; }
     }
 }
