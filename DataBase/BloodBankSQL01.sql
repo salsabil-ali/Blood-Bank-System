@@ -185,19 +185,24 @@ END;
 GO
 
 --update donor
-CREATE PROCEDURE UpdateDonor0
+Alter PROCEDURE UpdateDonor0
     @Donor_ID INT,
     @Name VARCHAR(100),
     @Phone_Number VARCHAR(15),
     @Address VARCHAR(255),
-    @Dgen varchar(10)
+    @Dgen varchar(10),
+    @date DateTime ,
+    @bloodType varchar(10)
 AS
 BEGIN
     UPDATE Donor
     SET Name = @Name,
         Phone_Number = @Phone_Number,
         Address = @Address,
-        Gender=@Dgen
+        Gender=@Dgen,
+        Blood_Type=@bloodType ,
+        Date_of_Birth=@date
+
     WHERE Donor_ID = @Donor_ID
 END;
 GO
@@ -248,7 +253,7 @@ BEGIN
     WHERE Blood_Type = @BloodType
     AND Status = @Status
 END;
-
+GO
 /* --update blood units (status)
 CREATE PROCEDURE UpdateBloodUnitStatus
     @Id INT,
