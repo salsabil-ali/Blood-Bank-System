@@ -26,7 +26,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
             base.Dispose(disposing);
         }
-         
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -60,6 +60,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -299,6 +300,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button6);
+            this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -327,6 +329,23 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.button6.Text = "🔍";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button7.FlatAppearance.BorderSize = 2;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(360, 47);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(120, 47);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Show All";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // textBox6
             // 
@@ -480,7 +499,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
 
         #endregion
-        
+
         private ImageList imageList1;
         private TextBox textBox1;
         private PictureBox pictureBox1;
@@ -511,6 +530,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         private Button button4;
         private Button button5;
         private Button button6;
+        private Button button7;
         private TextBox textBox6;
     }
 }

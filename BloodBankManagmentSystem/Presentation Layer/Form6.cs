@@ -18,6 +18,12 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         public Form6()
         {
             InitializeComponent();
+            UITheme.Apply(this);
+            label1.ForeColor = UITheme.HeaderAccent;
+
+            // Load the hospital list right away instead of showing an empty grid
+            // until "Show All" is clicked.
+            LoadHospitalData();
         }
 
         // Handles changes to the address textbox; currently unused but reserved for future validation.
@@ -131,8 +137,8 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         }
 
-       
-            private void button4_Click(object sender, EventArgs e)
+
+        private void button4_Click(object sender, EventArgs e)
         {
             try
             {
@@ -163,7 +169,44 @@ namespace BloodBankManagmentSystem.Presentation_Layer
                 MessageBox.Show("Clear failed: " + ex.Message);
             }
         }
-       
+
+
+        // Click handler for the Delete button. This was previously not wired up at all,
+        // so clicking "Delete" did nothing - it now removes the hospital after confirming.
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!int.TryParse(textBox2.Text, out int id))
+                {
+                    MessageBox.Show("Please enter a valid numeric Hospital ID to delete.");
+                    return;
+                }
+
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to delete this hospital?",
+                    "Confirm Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    HospitalService service = new HospitalService();
+                    service.RemoveHospital(id);
+
+                    textBox2.Clear();
+                    textBox3.Clear();
+                    textBox4.Clear();
+                    textBox5.Clear();
+
+                    LoadHospitalData();
+                    MessageBox.Show("Hospital deleted successfully.");
+                }
+            }
+            catch (Exception ex)
+            {
+                // This will catch things like a hospital still referenced by active requests.
+                MessageBox.Show("Delete Failed: " + ex.Message);
+            }
+        }
 
         // Click handler for the search button: searches for a hospital by ID and updates UI.
         private void button6_Click(object sender, EventArgs e)
@@ -234,9 +277,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         // Navigates back to the main menu (Form1).
         private void button5_Click(object sender, EventArgs e)
         {
-            Form1 main = new Form1();
-            main.Show();
-            this.Close();
+            AppNavigator.ReturnToMenu(this);
         }
     }
 }

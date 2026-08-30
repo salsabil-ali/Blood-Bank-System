@@ -16,6 +16,12 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         public Form3()
         {
             InitializeComponent();
+            UITheme.Apply(this);
+            label1.ForeColor = UITheme.HeaderAccent;
+
+            // Load the current blood units right away instead of showing an empty
+            // grid until the user touches the filter.
+            RefreshBloodUnits();
         }
         private DonationService donationService = new DonationService();
 
@@ -44,7 +50,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         }
 
-      
+
 
         // Placeholder for button2 click handler; reserved for future functionality.
         private void button2_Click(object sender, EventArgs e)
@@ -55,9 +61,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         // Navigates back to the main form when the back button is clicked.
         private void but6_Click(object sender, EventArgs e)
         {
-            Form1 main = new Form1();
-            main.Show();
-            this.Close();
+            AppNavigator.ReturnToMenu(this);
         }
 
         // Event handler for blood type selection change; currently unused.

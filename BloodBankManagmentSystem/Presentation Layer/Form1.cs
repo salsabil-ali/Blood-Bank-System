@@ -15,6 +15,13 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         public Form1()
         {
             InitializeComponent();
+            UITheme.Apply(this);
+
+            // "Main Menu" is a page title, not an editable field - lock it down so
+            // it can't be accidentally typed over or focused with Tab.
+            textBox1.ReadOnly = true;
+            textBox1.TabStop = false;
+            textBox1.Cursor = Cursors.Default;
         }
 
 
@@ -22,32 +29,27 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         private void button6_Click(object sender, EventArgs e)
         {
             Form2 myf = new Form2();
-            myf.Show();
-            this.Hide();
-
+            AppNavigator.OpenPage(this, myf);
         }
 
         private void button2_Click_2(object sender, EventArgs e)
         {
             Form3 myf = new Form3();
-            myf.Show();
-            this.Hide();
+            AppNavigator.OpenPage(this, myf);
         }
 
 
         private void button3_Click(object sender, EventArgs e)
         {
             Form4 myf = new Form4();
-            myf.Show();
-            this.Hide();
+            AppNavigator.OpenPage(this, myf);
         }
 
 
         private void button4_Click(object sender, EventArgs e)
         {
             Form5 myf = new Form5();
-            myf.Show();
-            this.Hide();
+            AppNavigator.OpenPage(this, myf);
         }
 
 
@@ -67,8 +69,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         private void button6_Click_1(object sender, EventArgs e)
         {
             Form6 myf = new Form6();
-            myf.Show();
-            this.Hide();
+            AppNavigator.OpenPage(this, myf);
         }
     }
 }

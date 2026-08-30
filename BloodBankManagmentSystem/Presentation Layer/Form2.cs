@@ -45,6 +45,8 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         public Form2()
         {
             InitializeComponent();
+            UITheme.Apply(this);
+            label1.ForeColor = UITheme.HeaderAccent;
             DisplayDonors();
         }
 
@@ -92,9 +94,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form1 main = new Form1();
-            main.Show();
-            this.Close();
+            AppNavigator.ReturnToMenu(this);
         }
 
         // Alternate grid cell content click handler; currently unused.
@@ -161,7 +161,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-        
+
         }
 
         // Handles Add operation: maps UI fields to Donor model and creates a new donor via service.
@@ -223,7 +223,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
                         MessageBox.Show("Donor deleted successfully.");
 
-                        
+
                         LoadDonorsList();
                     }
                 }
@@ -279,10 +279,10 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             try
             {
                 DonorService service = new DonorService();
-                var allDonors= service.GetAllDonors();
+                var allDonors = service.GetAllDonors();
 
                 // 1. Update the grid
-                dataGridView1.DataSource = allDonors ;
+                dataGridView1.DataSource = allDonors;
 
                 // 2. Optional: Clear the search textbox if you have one
                 textBox6.Clear();

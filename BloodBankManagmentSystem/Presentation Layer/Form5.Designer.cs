@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -141,7 +140,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             this.comboBox2.Items.AddRange(new object[] {
             "Available",
             "Used",
-            "Reserved"});
+            "Expired"});
             this.comboBox2.Location = new System.Drawing.Point(125, 72);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";

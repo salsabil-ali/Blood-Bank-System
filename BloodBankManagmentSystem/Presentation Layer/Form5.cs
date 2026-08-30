@@ -16,6 +16,12 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         public Form5()
         {
             InitializeComponent();
+            UITheme.Apply(this);
+            label1.ForeColor = UITheme.HeaderAccent;
+
+            // Populate the dashboard immediately instead of showing an empty grid
+            // and zeroed-out stat cards until "Show All" is clicked.
+            LoadAllUnits();
         }
 
         private void Form5_Load(object sender, EventArgs e)
@@ -41,9 +47,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         // Navigates back to the main menu (Form1).
         private void button3_Click(object sender, EventArgs e)
         {
-            Form1 main = new Form1();
-            main.Show();
-            this.Close();
+            AppNavigator.ReturnToMenu(this);
         }
 
         // Executes filtering based on selected blood type and status, updates grid and stats.
@@ -59,16 +63,8 @@ namespace BloodBankManagmentSystem.Presentation_Layer
                 BloodUnitService service = new BloodUnitService();
                 var list = service.GetFilteredUnits(selectedType, selectedStatus);
 
-                // 3. Update Grid
-                dataGridView2.DataSource = list;
-                label8.Text = list.Count.ToString();
-
-                label9.Text = list.Count(u => u.Status == "Available").ToString();
-                label10.Text = list.Count(u => u.Status == "Used").ToString();
-                label11.Text = list.Count(u => u.Status == "Reserved").ToString();
-
-                // 4. Update the "Total Units" box for this specific search
-                panel1.Text = list.Count.ToString();
+                // 3. Update Grid and dashboard cards
+                UpdateDashboard(list);
             }
             catch (Exception ex)
             {
@@ -79,27 +75,37 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         // Shows all blood units and updates dashboard counters.
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            LoadAllUnits();
+        }
 
+        // Loads every blood unit and refreshes the grid + stat cards. Shared by the
+        // constructor (so the page isn't blank on open) and the "Show All" button.
+        private void LoadAllUnits()
+        {
             try
             {
                 BloodUnitService service = new BloodUnitService();
                 var allData = service.GetAllUnits();
-
-                // 1. Update the Grid
-                dataGridView2.DataSource = allData;
-
-                // 2. Update the Dashboard Boxes (This is the part you were missing)
-                label8.Text = allData.Count.ToString();
-
-                label9.Text = allData.Count(u => u.Status == "Available").ToString();
-                label10.Text = allData.Count(u => u.Status == "Used").ToString();
-                label11.Text = allData.Count(u => u.Status == "Reserved").ToString();
+                UpdateDashboard(allData);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        // Refreshes the grid and the four dashboard cards (Total / Available / Used / Expired)
+        // from a given list of blood units.
+        private void UpdateDashboard(List<BloodBankManagmentSystem.Models.BloodUnit> list)
+        {
+            dataGridView2.DataSource = list;
+            label8.Text = list.Count.ToString();
+
+            label9.Text = list.Count(u => u.Status == "Available").ToString();
+            label10.Text = list.Count(u => u.Status == "Used").ToString();
+            // The "Expired" card was previously computed from a "Reserved" status that
+            // doesn't exist in the data model (BloodUnit.Status is Available/Used/Expired).
+            label11.Text = list.Count(u => u.Status == "Expired").ToString();
         }
 
         private void label8_Click(object sender, EventArgs e)

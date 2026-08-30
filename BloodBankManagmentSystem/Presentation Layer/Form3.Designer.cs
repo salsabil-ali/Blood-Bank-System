@@ -330,7 +330,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
 
         #endregion
-       
+
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label1;

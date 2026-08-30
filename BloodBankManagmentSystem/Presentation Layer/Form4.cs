@@ -18,16 +18,23 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         public Form4()
         {
             InitializeComponent();
+            UITheme.Apply(this);
+            label7.ForeColor = UITheme.HeaderAccent;
+
             // Add this line here to manually link the event
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
 
             // Also ensure this property is set so you can select the whole row
             this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.MultiSelect = false;
+
+            // Load the current requests right away instead of showing an empty grid
+            // until the user searches or presses "Show All".
+            LoadAllRequests();
         }
 
-        // 2. Load data into the main grid when the form opens
-        private void Form4_Load(object sender, EventArgs e)
+        // Loads every request into the top grid. Shared by the constructor and "Show All".
+        private void LoadAllRequests()
         {
             try
             {
@@ -36,10 +43,14 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading requests: " + ex.Message);
-                // Setting this to FullRowSelect resolves the sorting conflict
-                this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             }
+        }
 
+        // Data loading now happens in the constructor via LoadAllRequests(), so the
+        // form doesn't open with an empty grid. These Load handlers are kept only
+        // because the designer still references one of them.
+        private void Form4_Load(object sender, EventArgs e)
+        {
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,7 +89,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
                         int selectedRequestId = Convert.ToInt32(selectedIdValue);
 
                         // 2. Sync the ID to the textbox (so you can Delete or Approve easily)
-                        textBox1.Text = selectedRequestId.ToString();
+                        textBox3.Text = selectedRequestId.ToString();
 
                         // 3. Fetch the allocation details for this specific request
                         var details = requestService.GetRequestDetails(selectedRequestId);
@@ -113,9 +124,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form1 main = new Form1();
-            main.Show();
-            this.Close();
+            AppNavigator.ReturnToMenu(this);
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -129,24 +138,27 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         }
 
         // Handles Add Request button: maps UI fields to model and creates a new request via service.
+        // NOTE: Request ID lives in textBox3 and Hospital ID lives in textBox1 (matching the
+        // visible label layout and the Search handler below) - these were previously swapped,
+        // which silently saved every new request with Request ID and Hospital ID reversed.
         private void button2_Click_1(object sender, EventArgs e)
         {
             try
             {
                 BloodRequest req = new BloodRequest
                 {
-                    Request_ID = int.Parse(textBox1.Text),
+                    Request_ID = int.Parse(textBox3.Text),
                     Request_Date = dateTimePicker1.Value,
                     Blood_Type = comboBox2.Text,
                     Quantity_Requested = int.Parse(textBox2.Text),
-                    Hospital_ID = int.Parse(textBox3.Text)
+                    Hospital_ID = int.Parse(textBox1.Text)
                 };
 
                 requestService.CreateRequest(req);
                 MessageBox.Show("Blood Request added successfully!");
 
                 // Refresh main grid
-                dataGridView1.DataSource = requestService.GetAllRequests();
+                LoadAllRequests();
             }
             catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
         }
@@ -184,19 +196,54 @@ namespace BloodBankManagmentSystem.Presentation_Layer
         // Handles Delete Request button: deletes a request after confirmation and refreshes the list.
         private void button4_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (!int.TryParse(textBox3.Text, out int id))
+                {
+                    MessageBox.Show("Please enter or select a valid Request ID to delete.");
+                    return;
+                }
+
+                DialogResult result = MessageBox.Show(
+                    "Are you sure you want to delete this request?",
+                    "Confirm Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    requestService.DeleteRequest(id);
+
+                    ClearRequestFields();
+                    LoadAllRequests();
+                    MessageBox.Show("Request deleted successfully.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Delete Failed: " + ex.Message);
+            }
         }
 
         // Resets the request form input fields and clears details grid.
         private void button5_Click_1(object sender, EventArgs e)
         {
-           
+            ClearRequestFields();
+        }
+
+        private void ClearRequestFields()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            comboBox2.SelectedIndex = -1;
+            dateTimePicker1.Value = DateTime.Now;
+            dataGridView2.DataSource = null;
         }
 
 
         // Shows all requests in the grid and clears the search textbox.
         private void button7_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = requestService.GetAllRequests();
+            LoadAllRequests();
             textBox6.Clear();
         }
 
@@ -241,7 +288,7 @@ namespace BloodBankManagmentSystem.Presentation_Layer
                     int selectedRequestId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Request_ID"].Value);
 
                     // Update TextBoxes for editing
-                    textBox1.Text = selectedRequestId.ToString();
+                    textBox3.Text = selectedRequestId.ToString();
 
                     // Fill the BOTTOM grid with unit allocation details
                     var details = requestService.GetRequestDetails(selectedRequestId);
@@ -250,15 +297,15 @@ namespace BloodBankManagmentSystem.Presentation_Layer
             }
             catch (Exception ex) { MessageBox.Show("Error loading allocation details: " + ex.Message); }
         }
-    
-        
+
+
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        
+
 
 
 

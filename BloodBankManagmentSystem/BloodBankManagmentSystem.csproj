@@ -67,6 +67,7 @@
     <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\Hospital.cs" />
     <Compile Include="Models\RequestDetails.cs" />
+    <Compile Include="Presentation Layer\Appnavigator.cs" />
     <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +104,7 @@
     <Compile Include="Presentation Layer\Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\UITheme.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation Layer\Form1.resx">
